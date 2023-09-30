@@ -1,0 +1,25 @@
+// cambio variabili bootstrap
+@use 'variables' as *;
+
+
+$primary:       $light-red; 
+$secondary:     $white;
+$success:       $green;
+$info:          $pink;
+$warning:       $yellow;
+$danger:        $red;
+$light:         $light-gray; 
+$dark:          $black;
+
+
+// font
+$font-sizes: (
+  1: $font-size-one,
+  2: $font-size-two,
+  3: $font-size-three,
+  4: $font-size-four,
+  5: $font-size-five,
+  6: $font-size-six
+);
+//import bootstrap
+@import '../../../node_modules/bootstrap/scss/bootstrap.scss'

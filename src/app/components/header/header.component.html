@@ -1,0 +1,30 @@
+<!-- id="navbarToggleExternalContent" -->
+
+<!-- ngIF => show menu -->
+<div *ngIf="collapse" data-bs-theme="dark">
+    <div class="bg-dark p-4">
+      <h5 class="text-body-emphasis h4 text-uppercase tw-bold">La casa di Montalbano</h5>
+      <div class="d-flex gap-2 flex-wrap">
+
+        <!-- ngFor => navItems -->
+        <a *ngFor="let item of navItems" class="item from-center"> {{item}} </a>
+      </div>
+    </div>
+  </div>
+  <nav class="navbar navbar-dark bg-dark">
+    <div class="container-fluid d-flex justify-content-end">
+        <button class="navbar-toggler mt-1" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon " (click)="onToggleMenu()"></span>
+        </button>
+    </div>
+</nav>
+
+<div class="bg-dark h-50 d-flex flex-column align-items-center w-100 justify-content-center position-relative">
+    <span class="container-fluid pb-5 text-center">
+    <h1 class="text-white-50 fs-1 font-header"> La casa di </h1>
+   
+    <h1 class="text-white-50 fs-1 font-header">  Montalbano</h1>
+    </span>
+        <p class="text-white-50 fs-6 position-absolute bottom-0 pb-5 font-header"> Via A. Cammilleri, 93  - Vigata (RG) </p>
+</div>
+

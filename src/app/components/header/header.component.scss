@@ -1,0 +1,41 @@
+@use '../../../assets/scss/variables' as * ;
+
+
+
+.font-header {
+    font-family: $font-title;
+}
+
+
+// effetto al passaggio del mouse su voce menu
+.item:hover {
+    cursor: pointer;
+    
+}
+
+.item {
+    display: block;
+    color: $light-gray;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.item:after {
+    display: block;
+    content: '';
+    border-bottom: 3px solid $yellow;
+    
+    transform: scaleX(0);
+    transition: transform 250ms ease-in-out;
+}
+
+
+.item:hover:after {  
+    transform: scaleX(1);
+    cursor: pointer;
+}
+
+.from-center:after {
+    transform-origin: 50% 50%;
+}
+

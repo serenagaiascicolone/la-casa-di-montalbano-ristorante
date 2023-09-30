@@ -1,1 +1,18 @@
-/* You can add global styles to this file, and also import other style files */
+@use '../src/assets/scss/variables' as *; 
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css");
+
+
+body, html {
+    height: 100%;
+}
+body {
+    font-family: $font-general;
+    background-color: $white;
+}
+
+
+h1, h2, h3, h4, h5, h6, p, address {
+    margin: 0;
+    padding: 0;
+}
+

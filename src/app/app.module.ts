@@ -9,6 +9,7 @@ import { CarouselComponent } from './components/carousel/carousel.component';
 import { SectionsComponent } from './components/sections/sections.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { FormsModule } from '@angular/forms';
+import { PizzeriaComponent } from './pages/pizzeria/pizzeria.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { FormsModule } from '@angular/forms';
     HeaderComponent,
     CarouselComponent,
     SectionsComponent,
-    FooterComponent
+    FooterComponent,
+    PizzeriaComponent
   ],
   imports: [
     BrowserModule,

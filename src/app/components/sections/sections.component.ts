@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {cardsList} from '../../Mock/cardSList'
+import {cardsList} from '../../../assets/Mock/cardSList'
 @Component({
   selector: 'app-sections',
   templateUrl: './sections.component.html',

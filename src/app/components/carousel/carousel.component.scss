@@ -1,0 +1,11 @@
+@use '../../../assets/scss/variables' as *; 
+
+
+.active {
+    background-color: $white;
+}
+
+.not-active {
+    background-color: $light-gray;
+}
+

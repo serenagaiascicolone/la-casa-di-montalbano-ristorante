@@ -1,0 +1,46 @@
+
+
+<div class="h-50 d-flex justify-content-center d-flex  align-items-center hero" >
+    <cite class="w-75  text-center fs-4 p-4 fw-bold hero-text text-light"> “Se mentre mangi con gusto non hai allato a tia una pirsona che mangia con pari gusto allora il piaciri del mangiare è come offuscato, diminuito.” <br>
+      A. Cammilleri
+    </cite>
+  </div>
+  
+  <section class="m-3 d-flex flex-column justify-content-center align-items-center gap-3 my-3">
+      <div class="py-2 pb-5 d-flex flex-column align-items-center">
+          <h3 class="fw-bold text-uppercase text-dark title-cards-menu "> I nostri piatti </h3>
+          <p class="text-center"> Sono disponibili opzioni vegetariane, vegane, senza lattosio e senza glutine</p>
+        </div>
+        <ng-container *ngFor="let item of dishes | keyvalue: keepOrder;">
+            <div class="w-100 d-flex align-item-center justify-content-center" [ngClass]="{
+                'bg-success': item.key === 'primi',
+                'bg-danger': item.key === 'secondi',
+                'bg-info': item.key === 'desserts',
+                'bg-warning': item.key === 'vini',  
+            }"   >
+                <h4 
+                    class="text-uppercase"> {{item.key}} 
+                </h4>
+            </div>
+    
+    
+            <div  *ngFor="let dish of item.value" class="card mb-3 border border-0" style="max-width: 500px;">
+                <div class="row g-0 align-items-center gap-2">
+                    <div class="col-5 img-card-menu-container" style="width: 100px;">
+                        <img src="../../../assets/images/restaurant-list/{{dish.image}}.png" class="img-fluid rounded-start img-card-menu" alt="...">
+                    </div>
+                  <div class="col-6 text-card-menu-container" style="width: 200px;">
+                    <div class="card-body">
+                    <h5 class="card-title fw-bold">{{dish.name}}</h5>
+                    <p class="card-text">{{dish.description}}</p>
+                    <p class="card-text"><small class="text-muted">€ {{dish.price}} </small></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+        </ng-container>
+
+    </section>
+
+

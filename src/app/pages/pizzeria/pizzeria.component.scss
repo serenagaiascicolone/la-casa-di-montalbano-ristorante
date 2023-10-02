@@ -1,0 +1,33 @@
+@use '../../../assets/scss/variables' as *;
+
+.hero {
+    background-image: linear-gradient(
+        rgba(0, 0, 0,0.3),
+        rgba(0, 0, 0,0.3)
+    ),
+    url('../../../assets/images/pizzeria-image.jpg');
+    background-size: cover;
+    background-position: center center;
+
+}
+
+.hero-text {
+    text-shadow: 5px 1px 10px $black;
+}
+
+.title-cards-menu{
+    border-bottom: 2px solid $yellow;
+}
+
+.img-card-menu-container {
+    width: 100px;
+}
+
+.text-card-menu-container{
+    width: 200px;
+}
+
+.img-card-menu {
+    max-width: 100px;
+
+}

@@ -10,6 +10,7 @@ import { SectionsComponent } from './components/sections/sections.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { FormsModule } from '@angular/forms';
 import { PizzeriaComponent } from './pages/pizzeria/pizzeria.component';
+import { RistoranteComponent } from './pages/ristorante/ristorante.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { PizzeriaComponent } from './pages/pizzeria/pizzeria.component';
     CarouselComponent,
     SectionsComponent,
     FooterComponent,
-    PizzeriaComponent
+    PizzeriaComponent,
+    RistoranteComponent
   ],
   imports: [
     BrowserModule,

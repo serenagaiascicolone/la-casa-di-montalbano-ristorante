@@ -13,12 +13,24 @@
         
         
         <div *ngIf= "(card.title === 'Pizzeria' || card.title === 'Ristorante')" class="cube w-25 text-center mx-auto">
+         
+            <ng-container *ngIf= "(card.title === 'Pizzeria')" >
             <div class="flippety d-flex align-items-center justify-content-center  border border-2 border-warning p-2">
-                <p class="fs-6 fw-bold text-uppercase "> Menu </p>
+                <p class="fs-6 fw-bold text-uppercase "> Menu Pizza </p>
             </div>
             <div class="flop d-flex align-items-center justify-content-center  text-uppercase bg-warning border border-2 border-warning">
-                <p class="fs-6 fw-bold text-uppercase p-2" > Menu </p>
+                <p class="fs-6 fw-bold text-uppercase p-2" (click)="goToPizzeria()"> Menu </p>
             </div>
+             </ng-container>
+         
+             <ng-container *ngIf= "(card.title === 'Ristorante')" >
+                 <div class="flippety d-flex align-items-center justify-content-center  border border-2 border-warning p-2">
+                     <p class="fs-6 fw-bold text-uppercase "> Menu Ristorante </p>
+                 </div>
+                 <div class="flop d-flex align-items-center justify-content-center  text-uppercase bg-warning border border-2 border-warning">
+                     <p class="fs-6 fw-bold text-uppercase p-2" (click)="goToRistorante()"> Menu </p>
+                 </div>
+             </ng-container>
         </div>
      
 

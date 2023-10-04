@@ -8,11 +8,13 @@ const URL = '../../assets/Mock/slides.ts'
 })
 export class dataService {
 
-  constructor(private http: HttpClient) {}
+  constructor() {}
+
+
 
   getDataCarousel() {
     // metodo che recupera i dati dall'array slides 
-    return this.http.get(URL)
+    // return this.http.get(URL)
   }
 
 }

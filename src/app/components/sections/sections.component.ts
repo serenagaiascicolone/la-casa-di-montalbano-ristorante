@@ -1,15 +1,30 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import {cardsList} from '../../../assets/Mock/cardSList'
 @Component({
   selector: 'app-sections',
   templateUrl: './sections.component.html',
   styleUrls: ['./sections.component.scss']
 })
-export class SectionsComponent {
+export class SectionsComponent implements OnInit {
 cards: {image: string, title: string, description: string}[]= cardsList; 
+
+constructor(private router: Router, private activeRoute: ActivatedRoute){}
 
 test () {
   console.log(this.cards)
+}
+
+goToPizzeria() {
+this.router.navigate(['/menu-pizzeria'])
+}
+
+goToRistorante() {
+this.router.navigate(['/menu-ristorante'])
+}
+
+ngOnInit(): void {
+
 }
 
 // cards = [

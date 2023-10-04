@@ -9,11 +9,17 @@ import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit, OnDestroy {
-navItems = ['about us', 'ingredienti', 'pizzeria', 'ristorante', 'prenota', 'contatti']
+navItems = ['home', 'about us', 'ingredienti', 'pizzeria', 'ristorante', 'prenota', 'contatti']
 collapse = false;
+navItemsHome = this.navItems.filter(item => item !== 'home')
+navItemsPizzeria = this.navItems.filter(item => item !== 'pizzeria')
+navItemsRistorante= this.navItems.filter(item => item !== 'ristorante')
 
 
+// subscribe 
 routerEvents: any; 
+
+// variabile per verificare l'url corrente 
 currentLocation: string; 
 constructor(private router: Router, private activatedRoute: ActivatedRoute) {
 }
@@ -28,13 +34,12 @@ ngOnInit(): void {
     (event:any)=>{
       if(event instanceof NavigationEnd){
         this.currentLocation = event.url;
-        console.log(this.currentLocation)
       }
     }
-    )
+    )  
+  }
   
-  
-}
+
 ngOnDestroy(): void {
   this.routerEvents.unsubscribe();
   // Annulla l'iscrizione per evitare perdite di memoria

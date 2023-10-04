@@ -7,7 +7,11 @@
       <div class="d-flex gap-2 flex-wrap">
 
         <!-- ngFor => navItems -->
-        <a *ngFor="let item of navItems" class="item from-center"> {{item}} </a>
+        <a *ngFor="let item of navItems" class="item from-center" 
+        [ngStyle]="{'display': currentLocation === '/home' && item === 'home' ? 'none' : 'block'}"
+        [ngStyle]="{'display': currentLocation === '/menu-pizzeria' && item === 'pizzeria' ? 'none' : 'block'}"
+        [ngStyle]="{'display': currentLocation === '/menu-ristorante' && item === 'ristorante' ? 'none' : 'block'}"  
+        > {{item}} </a>
       </div>
     </div>
   </div>

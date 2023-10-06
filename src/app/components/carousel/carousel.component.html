@@ -1,20 +1,22 @@
-<div id="carouselExampleIndicators" class="carousel slide">
-    <div class="carousel-indicators">
-      <button *ngFor="let slide of slidesList; let i = index" (click) = 'onSelectedImage(i)'
-      type="button" data-bs-target="#carouselExampleIndicators"  attr.aria-label="i" [ngClass]="{'active': currentIndex === i }"></button>
-    </div>
-    <div  class="carousel-inner">
-      <div>
-        <img src="../../../assets/images/carousel/{{getFirstSlide()}}.jpg" class="d-block w-100" alt="...">
-       
+<div class="w-100 bg-black">
+  <div id="carouselExampleIndicators" class="col-lg-8 mx-auto carousel slide p-lg-5 bg-black">
+      <div class="carousel-indicators">
+        <button *ngFor="let slide of slidesList; let i = index" (click) = 'onSelectedImage(i)'
+        type="button" data-bs-target="#carouselExampleIndicators"  aria-label="i" [ngClass]="{'active': currentIndex === i }"></button>
       </div>
-    
-    <button class="carousel-control-prev" type="button" (click)="getPreviousSlide()">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" (click)="getNextSlide()">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
-  </div>
+      <div  class="carousel-inner">
+        <div>
+          <img src="../../../assets/images/carousel/{{getFirstSlide()}}.jpg" class="d-block w-100" alt="...">
+         
+        </div>
+      
+      <button class="carousel-control-prev" type="button" (click)="getPreviousSlide()">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" (click)="getNextSlide()">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+</div>

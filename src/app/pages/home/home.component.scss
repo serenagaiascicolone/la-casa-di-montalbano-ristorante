@@ -1,0 +1,27 @@
+@use '../../../assets/scss/variables' as *;
+
+.ico-img {
+    width: 50px;
+}
+
+// effetto hover su button menu
+.cube {
+    height: 40px;
+
+    transition: transform 1.33s;
+    transform-style: preserve-3d;
+}
+
+
+.flipperty {
+    transform: translateZ(20px);
+}
+
+.flop {
+    transform: rotateX(-90deg) translateZ(-20px);
+}
+
+.cube:hover {
+    transform: rotateX(90deg);
+    cursor: pointer;
+}

@@ -10,55 +10,32 @@ const URL = '../../assets/Mock/slides.ts'
 })
 export class dataService {
 
-
+  // variabili per cambiare menu => fragment contatti e prenota
+  // codice ripetitivo
+  //TODO: DA RIVEDERE 
   isHomeSubject: BehaviorSubject<boolean> = new BehaviorSubject(false);
   isHome = this.isHomeSubject.asObservable();
 
   setIsHome = (value: boolean) => {
     this.isHomeSubject.next(value)
   }
-  
- 
 
 
-  navItems: {label: string, url: string, fragment:string | undefined} [] = [
-    {
-      label: 'home',
-      url: 'home',
-      fragment: undefined,
-    },
-    {
-      label: 'about us',
-      url: '',
-      fragment: 'about-us'
-    },
-    {
-      label: 'ingredienti',
-      url: '',
-      fragment: 'ingredienti'
-    },
-    {
-      label: 'pizzeria',
-      url: 'menu-pizzeria',
-      fragment: 'pizzeria'
-    },
-    {
-      label: 'ristorante',
-      url: 'menu-ristorante',
-      fragment: 'ristorante'
-    },
-    {
-      label: 'prenota',
-      url: '',
-      fragment: 'prenota'
-    },
-    {
-      label: 'contatti',
-      url: '',
-      fragment: 'contatti'
-    },
-  ]
+  isRistoranteSubject: BehaviorSubject<boolean> = new BehaviorSubject(false);
+  isRistorante = this.isRistoranteSubject.asObservable();
 
+  setIsRistorante = (value: boolean) => {
+    this.isRistoranteSubject.next(value)
+  }
+
+  isPizzeriaSubject: BehaviorSubject<boolean> = new BehaviorSubject(false);
+  isPizzeria= this.isPizzeriaSubject.asObservable();
+
+  setIsPizzeria = (value: boolean) => {
+    this.isPizzeriaSubject.next(value)
+  }
+
+  // LIST PER RIEMPIRE SECTIONS COMPONENT E HEADER 
   cardsList: {image: string, title: string, description: string, id: string}[]  = [
     {
       image: 'pan',
@@ -87,9 +64,6 @@ export class dataService {
   ]
 
 
-  getDataCarousel() {
-    // metodo che recupera i dati dall'array slides 
-    // return this.http.get(URL)
-  }
+ 
 
 }

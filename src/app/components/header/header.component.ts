@@ -1,6 +1,9 @@
 
 import {Component, OnDestroy, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
+import { Subscribable, Subscription } from 'rxjs';
+import { dataService } from 'src/app/services/data.service';
+
 
 
 @Component({
@@ -9,11 +12,26 @@ import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit, OnDestroy {
-navItems = ['home', 'about us', 'ingredienti', 'pizzeria', 'ristorante', 'prenota', 'contatti']
+  
+
+  
+  
+  constructor(private router: Router, private activatedRoute: ActivatedRoute, private dataSrv: dataService) { }
+
+  
+ isHome: boolean;
+  sub: Subscription
+
+
+  navItems: {label: string, url: string, fragment: string | undefined} [] = this.dataSrv.navItems
+// navItem = this.navItems.map(item => item)
 collapse = false;
-navItemsHome = this.navItems.filter(item => item !== 'home')
-navItemsPizzeria = this.navItems.filter(item => item !== 'pizzeria')
-navItemsRistorante= this.navItems.filter(item => item !== 'ristorante')
+// navItemsHome = this.navItems.filter(item => item !== 'home')
+// navItemsPizzeria = this.navItems.filter(item => item !== 'pizzeria')
+// navItemsRistorante= this.navItems.filter(item => item !== 'ristorante')
+cards: {image: string, title: string, description: string, id: string}[]= this.dataSrv.cardsList; 
+
+
 
 
 // subscribe 
@@ -21,7 +39,11 @@ routerEvents: any;
 
 // variabile per verificare l'url corrente 
 currentLocation: string; 
-constructor(private router: Router, private activatedRoute: ActivatedRoute) {
+
+// chiudi la navbar quando clicchi su una voce del menu 
+closeNavbar(){
+  this.collapse = false;
+
 }
 
 
@@ -36,13 +58,24 @@ ngOnInit(): void {
         this.currentLocation = event.url;
       }
     }
-    )  
+    ) 
+   this.sub = this.dataSrv.isHome.subscribe((value) => {
+      this.isHome = !value;
+      console.log(this.isHome)
+    }
+    )
+  
   }
   
+  changeMenu() {
+    this.dataSrv.setIsHome(false);
+    this.closeNavbar()
+  }
 
 ngOnDestroy(): void {
   this.routerEvents.unsubscribe();
   // Annulla l'iscrizione per evitare perdite di memoria
+  this.sub.unsubscribe()
 }
 }
 

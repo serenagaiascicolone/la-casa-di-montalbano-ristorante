@@ -1,8 +1,9 @@
 
 <section class="container-fluid w-100 d-flex flex-column align-items-center gap-2 my-4">
 
-    <div *ngFor="let card of cards" class="card border border-0 w-100 p-5" style="width: 18rem;">
-        <div class="w-100 d-flex justify-content-center">
+    <div *ngFor="let card of cards" class="card border border-0 w-100 p-5" style="width: 18rem;" id="{{card.id}}">
+
+        <div class="w-100 d-flex justify-content-center" >
             <img src= '../../../assets/images/icons/{{card.image}}.png' class="img-fluid ico-img" alt="...">
         </div>
         <div class="card-body d-flex flex-column justify-content-center p-5">
@@ -12,11 +13,11 @@
         
         
         
-        <div *ngIf= "(card.title === 'Pizzeria' || card.title === 'Ristorante')" class="cube w-25 text-center mx-auto">
+        <div *ngIf= "(card.title === 'Pizzeria' || card.title === 'Ristorante')" class="cube w-25 text-center mx-auto" >
          
             <ng-container *ngIf= "(card.title === 'Pizzeria')" >
             <div class="flippety d-flex align-items-center justify-content-center  border border-2 border-warning p-2">
-                <p class="fs-6 fw-bold text-uppercase "> Menu Pizza </p>
+                <p class="fs-6 fw-bold text-uppercase "> Menu </p>
             </div>
             <div class="flop d-flex align-items-center justify-content-center  text-uppercase bg-warning border border-2 border-warning">
                 <p class="fs-6 fw-bold text-uppercase p-2" (click)="goToPizzeria()"> Menu </p>
@@ -25,7 +26,7 @@
          
              <ng-container *ngIf= "(card.title === 'Ristorante')" >
                  <div class="flippety d-flex align-items-center justify-content-center  border border-2 border-warning p-2">
-                     <p class="fs-6 fw-bold text-uppercase "> Menu Ristorante </p>
+                     <p class="fs-6 fw-bold text-uppercase "> Menu </p>
                  </div>
                  <div class="flop d-flex align-items-center justify-content-center  text-uppercase bg-warning border border-2 border-warning">
                      <p class="fs-6 fw-bold text-uppercase p-2" (click)="goToRistorante()"> Menu </p>

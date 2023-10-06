@@ -1,35 +1,57 @@
 
 <!-- NAV Home -->
 <!-- ngIF => show menu -->
-<div *ngIf="collapse" data-bs-theme="dark">
-    <div class="bg-dark p-4">
-      <h5 class="text-body-emphasis h4 text-uppercase tw-bold">La casa di Montalbano</h5>
-      <div class="d-flex gap-2 flex-wrap">
+<header class=" position-fixed z-3 w-100 top-0">
 
-        <!-- ngFor => navItems -->
-        <a *ngFor="let item of navItems" class="item from-center" 
-        [ngStyle]="{'display': currentLocation === '/home' && item === 'home' ? 'none' : 'block'}"
-        [ngStyle]="{'display': currentLocation === '/menu-pizzeria' && item === 'pizzeria' ? 'none' : 'block'}"
-        [ngStyle]="{'display': currentLocation === '/menu-ristorante' && item === 'ristorante' ? 'none' : 'block'}"  
-        > {{item}} </a>
+
+
+  <div *ngIf="collapse" data-bs-theme="dark">
+      <div class="bg-dark p-4">
+        <!-- LOGO COLLAPSE HOME -->
+        <h5 *ngIf= "currentLocation === '/home'" class="text-body-emphasis h4 text-uppercase tw-bold">La casa di Montalbano</h5>
+       
+        <!-- MENU HOME -->
+        <!-- <div *ngIf="currentLocation !== '/menu-pizzeria' && currentLocation !== '/menu-ristorante'"  class="d-flex gap-2 flex-wrap"> -->
+        <div *ngIf="isHome"  class="d-flex gap-2 flex-wrap">
+          <a class="item from-center" routerLink = 'home' fragment="about-us" (click)="closeNavbar()"> About</a> 
+          <a class="item from-center" routerLink = 'home'  fragment="ingredienti" (click)="closeNavbar()"> Ingredienti</a> 
+          <a class="item from-center" routerLink = 'home'  fragment="pizzeria" (click)="closeNavbar()"> Pizzeria</a> 
+          <a class="item from-center" routerLink = 'home'  fragment="ristorante" (click)="closeNavbar()"> Ristorante</a> 
+          <a class="item from-center" routerLink = 'home'  fragment="contatti" (click)="closeNavbar()"> Contatti</a> 
+          <a class="item from-center" routerLink = 'home'  fragment="prenota" (click)="closeNavbar()"> Prenota</a> 
+        </div>
+       
+        <!-- MENU PIZZERIA -->
+        <div  *ngIf="!isHome" class="d-flex gap-2 flex-wrap">
+          <a class="item from-center" routerLink = 'home'  (click)="changeMenu()"> Home</a> 
+          <a class="item from-center" routerLink = 'home' fragment="about-us" (click)="closeNavbar()"> About</a> 
+          <a class="item from-center" routerLink = 'home'  fragment="ingredienti" (click)="closeNavbar()"> Ingredienti</a> 
+          <a class="item from-center" routerLink = '/menu-ristorante' (click)="closeNavbar()"> Ristorante</a> 
+          <a class="item from-center" routerLink = '/menu-pizzeria'  fragment="contatti" (click)="closeNavbar()"> Contatti</a> 
+          <a class="item from-center" routerLink = '/menu-pizzeria'  fragment="prenota" (click)="closeNavbar()"> Prenota</a> 
+        </div>
       </div>
     </div>
-  </div>
-  <nav class="navbar navbar-dark bg-dark">
-    
-    <div class="container-fluid d-flex justify-content-end">
-        <button class="navbar-toggler mt-1" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon " (click)="onToggleMenu()"></span>
-        </button>
-    </div>
-</nav>
+    <nav class="navbar navbar-dark bg-dark">
+      
+
+<!--TODO: SISTEMARE MENU RISTORANTE-->
+
+      <div class="container-fluid d-flex justify-content-end align-items-center">
+        <h5 *ngIf= "currentLocation !== '/home' && currentLocation !== '/' " class="text-light h4 text-uppercase tw-bold position-absolute start-0 p-3 m-0">La casa di Montalbano</h5>
+          <button class="navbar-toggler mt-1" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon " (click)="onToggleMenu()"></span>
+          </button>
+      </div>
+  </nav>
+</header>
 
 
 
 
 
 
-<div *ngIf="currentLocation === '/home'" class="bg-dark h-50 d-flex flex-column align-items-center w-100 justify-content-center position-relative">
+<div *ngIf= "currentLocation === '/home' || currentLocation === '/' " class="bg-dark h-50 d-flex flex-column align-items-center w-100 justify-content-center position-relative mt-5">
     <span class="container-fluid pb-5 text-center">
     <h1 class="text-white-50 fs-1 font-header"> La casa di </h1>
    

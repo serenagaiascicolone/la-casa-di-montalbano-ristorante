@@ -11,6 +11,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { FormsModule } from '@angular/forms';
 import { PizzeriaComponent } from './pages/pizzeria/pizzeria.component';
 import { RistoranteComponent } from './pages/ristorante/ristorante.component';
+import { HeroComponent } from './components/hero/hero.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { RistoranteComponent } from './pages/ristorante/ristorante.component';
     SectionsComponent,
     FooterComponent,
     PizzeriaComponent,
-    RistoranteComponent
+    RistoranteComponent,
+    HeroComponent
   ],
   imports: [
     BrowserModule,

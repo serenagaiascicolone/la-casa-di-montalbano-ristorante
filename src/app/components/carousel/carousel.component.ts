@@ -1,5 +1,6 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { slides } from 'src/assets/Mock/slides';
+import { Component, OnInit } from '@angular/core';
+import { dataService } from 'src/app/services/data.service';
+
 
 @Component({
   selector: 'app-carousel',
@@ -7,8 +8,10 @@ import { slides } from 'src/assets/Mock/slides';
   styleUrls: ['./carousel.component.scss']
 })
 export class CarouselComponent implements OnInit {
+
+  constructor (private dataSrv: dataService) {}
 // creo array
-slidesList = slides;
+slidesList = this.dataSrv.slides;
 
 
 currentIndex: number = 0
@@ -40,8 +43,7 @@ getPreviousSlide() {
   this.currentIndex = newIndex 
 }
 
-constructor() {
-}
+
 
 
 ngOnInit(): void {

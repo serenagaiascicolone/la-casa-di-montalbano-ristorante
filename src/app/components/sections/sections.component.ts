@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { dataService } from 'src/app/services/data.service';
 import {cardsList} from '../../../assets/Mock/cardSList'
 import { Subscription } from 'rxjs';
+import { StatesService } from './../../services/states.service';
 @Component({
   selector: 'app-sections',
   templateUrl: './sections.component.html',
@@ -12,28 +13,25 @@ export class SectionsComponent implements OnInit {
   isHome: boolean; 
  
 
-  constructor(private router: Router, private activeRoute: ActivatedRoute, private dataSrv: dataService){
+  constructor(private router: Router, 
+    private activeRoute: ActivatedRoute, 
+    private dataSrv: dataService,
+    private stateSrv: StatesService){
   }
-cards: {image: string, title: string, description: string, id: string}[]= this.dataSrv.cardsList; 
-
-
-
-test () {
-  console.log(this.cards)
-}
+cards: {image: string, title: string, description: string, id: string}[]= this.dataSrv.cardsList
 
 goToPizzeria() {
 this.router.navigate(['/menu-pizzeria'])
-this.dataSrv.setIsPizzeria(true);
-this.dataSrv.setIsHome(true);
+this.stateSrv.setIsPizzeria(true);
+this.stateSrv.setIsHome(true);
 
 }
 
 goToRistorante() {
   this.router.navigate(['/menu-ristorante'])
-  this.dataSrv.setIsRistorante(true);
-  this.dataSrv.setIsPizzeria(false);
-  this.dataSrv.setIsHome(true);
+  this.stateSrv.setIsRistorante(true);
+  this.stateSrv.setIsPizzeria(false);
+  this.stateSrv.setIsHome(true);
 }
 
 ngOnInit(): void {

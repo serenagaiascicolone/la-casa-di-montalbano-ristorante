@@ -7,13 +7,13 @@ vini: {name: string, description: '', price: number, image: string} []} =
         primi: [
 
             {
-                name: 'risotto con vellutata di zucca e speck',
+                name: 'il sorriso di angelica',
                 description: 'riso carnaroli, zucca delica, speck del Trentino',
                 price: 12.00,
                 image: 'primo1',
             },
             {
-                name: 'spaghetti alle vongole con bottarga',
+                name: 'la rete di protezione',
                 description: 'spaghetti, vongole veraci, bottarga',
                 price: 15.00,
                 image: 'primo2',
@@ -21,13 +21,13 @@ vini: {name: string, description: '', price: number, image: string} []} =
         ],
         secondi: [
             {
-                name: 'orata alla griglia con contorno di insalata mista e patate',
+                name: 'la giostra degli scambi',
                 description: 'orata, lattuga verde, ciliegino, carote, finocchi e patate novelle',
                 price: 20.00,
                 image: 'secondo1',
             },
             {
-                name: 'fuso di pollo al forno con patate e broccoli',
+                name: 'la caccia al tesoro',
                 description: 'fuso di pollo ruspante, broccoli e patate',
                 price: 12.00,
                 image: 'secondo2',
@@ -35,13 +35,13 @@ vini: {name: string, description: '', price: number, image: string} []} =
         ],
         desserts: [
             {
-                name: 'tiramisu',
+                name: 'una lama di luce',
                 description: 'mascarpone, savoiardi, uova, caffè, cacao, zucchero',
                 price: 7.00,
                 image: 'dessert1',
             },
             {
-                name: 'parfait alle mandorle',
+                name: 'la luna di carta',
                 description: 'mandorle, panna, burro, tuorli, zucchero, cioccolato',
                 price: 10.00,
                 image: 'dessert2',
@@ -49,13 +49,13 @@ vini: {name: string, description: '', price: number, image: string} []} =
         ],
           vini: [
             {
-                name: `Nero d'Avola`,
+                name: 'Donnafugata',
                 description: '',
-                price: 15.00,
+                price: 18.00,
                 image: 'wine1',
             },
             {
-                name: 'Bianco Grillo',
+                name: 'Carjcanti',
                 description: '',
                 price: 15.00,
                 image: 'wine2',

@@ -1,0 +1,30 @@
+@use '../../../assets/scss/variables' as *;
+
+.hero-pizzeria {
+    background-image: linear-gradient(
+        rgba(0, 0, 0,0.3),
+        rgba(0, 0, 0,0.3)
+    ),
+    url('../../../assets/images/pizzeria-image.jpg');
+}
+
+.hero {
+    background-size: cover;
+    background-position: center center;
+    
+}
+
+.hero-text {
+    text-shadow: 5px 1px 10px $black;
+}
+
+
+
+.hero-ristorante {
+    background-image: linear-gradient(
+        rgba(0, 0, 0,0.3),
+        rgba(0, 0, 0,0.3)
+    ),
+    url('../../../assets/images/ristorante-image.jpg');
+}
+

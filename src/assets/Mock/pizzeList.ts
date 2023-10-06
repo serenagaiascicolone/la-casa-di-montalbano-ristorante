@@ -18,7 +18,7 @@ export let pizzeList = [
         img: '3',
     },
     {
-        name: 'Riccardo',
+        name: 'Riccardino',
         description: 'crema di zucchine, fiordilatte, prezzemolo, zucchine grigliate',
         price: 8.00,
         img: '4',

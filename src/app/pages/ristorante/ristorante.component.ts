@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { restaurantList } from 'src/assets/Mock/restaurantList';
+import { dataService } from 'src/app/services/data.service';
 
 
 
@@ -10,7 +10,9 @@ import { restaurantList } from 'src/assets/Mock/restaurantList';
   styleUrls: ['./ristorante.component.scss']
 })
 export class RistoranteComponent {
-dishes = restaurantList;
+
+  constructor(private dataSrv: dataService){}
+dishes = this.dataSrv.restaurantList;
 keepOrder = (a: any, b: any) => {
   return a;
 }

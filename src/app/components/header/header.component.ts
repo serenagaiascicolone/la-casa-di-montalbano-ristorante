@@ -1,8 +1,9 @@
 
-import {Component, OnDestroy, OnInit } from '@angular/core';
+import {booleanAttribute, Component, HostListener, Inject, OnDestroy, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, NavigationEnd, IsActiveMatchOptions } from '@angular/router';
 import {Subscription } from 'rxjs';
 import { dataService } from 'src/app/services/data.service';
+import { StatesService } from './../../services/states.service';
 
 
 
@@ -13,7 +14,15 @@ import { dataService } from 'src/app/services/data.service';
 })
 export class HeaderComponent implements OnInit, OnDestroy {
   
-constructor(private router: Router, private activatedRoute: ActivatedRoute, private dataSrv: dataService) { }
+constructor(private router: Router, 
+  private activatedRoute: ActivatedRoute, 
+  private dataSrv: dataService, 
+  private stateSrv: StatesService) { 
+this.scrolling = false
+}
+
+
+
 
 // array per ciclare e creare menu e cards in sections
   cards:{image: string, title: string, description: string, id: string}[] = this.dataSrv.cardsList
@@ -23,9 +32,28 @@ constructor(private router: Router, private activatedRoute: ActivatedRoute, priv
  isRistorante: boolean;
  isPizzeria: boolean;
  sub: Subscription
- 
- // per cambiare classe alle ancore selezionate (click definito nel template)
+
+// cambiare classe header in base allo scrolling della pagina
+ scrolling: boolean; 
+@HostListener('window:scroll', ['$event']) onScrollEvent(){
+
+  if(document.documentElement.scrollTop > 500){
+    this.scrolling = true
+  }else {
+    this.scrolling = false
+  }
+  // if(!this.scrolling){
+  //   this.scrolling = true
+  // }
+}
+
+
+ // per cambiare classe alle ancore selezionate 
  selectedIndex: number;
+
+ setIndex(index: number){
+  this.selectedIndex = index;
+ }
 
 // gestire classe attiva per i fragment
  linkActiveOptions: IsActiveMatchOptions = {
@@ -35,11 +63,6 @@ constructor(private router: Router, private activatedRoute: ActivatedRoute, priv
   fragment: 'exact',
 };
 
- setIndex(index: number){
-  this.selectedIndex = index;
- }
-
-
 
  // per far vedere la navBar 
  collapse = false;
@@ -47,12 +70,16 @@ constructor(private router: Router, private activatedRoute: ActivatedRoute, priv
    this.collapse = !this.collapse; 
   }
   // chiudi la navbar quando clicchi su una voce del menu 
-  closeNavbar(){
-    this.collapse = false;
-  }
+ 
   
+  closeCollapse(event: Event){
+    if ((<HTMLAnchorElement>event.target).tagName === 'A'){
+      this.collapse = false
+    }
+  }
+
 // subscribe : per rotta corrente
-routerEvents: any; 
+routerEvents: Subscription; 
 
 // variabile per verificare l'url corrente 
 currentLocation: string; 
@@ -65,31 +92,29 @@ ngOnInit(): void {
     (event:any)=>{
       if(event instanceof NavigationEnd){
         this.currentLocation = event.url;
+   
       }
     }
     ) 
     // header sta in ascolto sulle variabili che consentono il cambio menu 
-   this.sub = this.dataSrv.isHome.subscribe((value) => {
+   this.sub = this.stateSrv.isHome.subscribe((value) => {
       this.isHome = !value;
-      console.log(this.isHome)
+   
     }
     )
-   this.sub = this.dataSrv.isRistorante.subscribe((value) => {
+   this.sub = this.stateSrv.isRistorante.subscribe((value) => {
       this.isRistorante = value;
-      console.log('ristorante', this.isRistorante)
+  
     })
-   this.sub = this.dataSrv.isPizzeria.subscribe((value) => {
+   this.sub = this.stateSrv.isPizzeria.subscribe((value) => {
       this.isPizzeria = value;
-      console.log('Pizzeria', this.isPizzeria)
+  
     }
     )
-  
+ 
   }
   
-  // changeMenu() {
-  //   this.dataSrv.setIsHome(false);
-  //   this.closeNavbar()
-  // }
+
 
 ngOnDestroy(): void {
   // distruggiamo le subscribe 

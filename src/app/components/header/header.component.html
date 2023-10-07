@@ -1,15 +1,16 @@
-<div *ngIf= "currentLocation === '/home' || currentLocation === '/' " class="bg-dark h-100 d-flex flex-column align-items-center w-100 justify-content-center position-relative">
+
+<!-- <div *ngIf= "currentLocation === '/home' || currentLocation === '/' " class="bg-dark h-100 d-flex flex-column align-items-center w-100 justify-content-center position-relative">
   <span class="container-fluid pb-5 text-center">
     <h1 class="text-white-50 fs-1 font-header"> La casa di </h1>
     
     <h1 class="text-white-50 fs-1 font-header">  Montalbano</h1>
   </span>
   <p class="text-white-50 fs-6 position-absolute bottom-0 pb-1 font-header"> Via A. Cammilleri, 93  - Vigata (RG) </p>
-</div>
+</div> -->
 
 <!-- NAV Home -->
 <!-- ngIF => show menu -->
-<header [ngClass]="{'not-scrolled': !scrolling, 'scrolled': scrolling}">
+<header [ngClass]="{'': !scrolling, 'scrolled': scrolling}">
 
 
 
@@ -50,7 +51,7 @@
 
 
       <div class="container-fluid d-flex justify-content-end align-items-center">
-        <h5 *ngIf= "currentLocation !== '/home' && currentLocation !== '/' " class="text-light h4 text-uppercase tw-bold position-absolute start-0 p-3 m-0">La casa di Montalbano</h5>
+        <h5 *ngIf= "currentLocation !== '/home' && currentLocation !== '/' " class="text-light h4 text-uppercase tw-bold position-absolute start-0 p-3 ms-2 m-0">La casa di Montalbano</h5>
           <button class="navbar-toggler mt-1" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon " (click)="onToggleMenu()"></span>
           </button>

@@ -93,6 +93,12 @@ export class dataService {
         price: 10.00,
         img: '9',
     },
+    {
+        name: 'La paura di Montalbano',
+        description: 'pesto di pistacchi e zucchine, mortadella di pollo,  burro di pistacchi, granella di pistacchi',
+        price: 13.00,
+        img: '1',
+    },
 ]
 
 restaurantList: 
@@ -104,7 +110,7 @@ vini: {name: string, description: '', price: number, image: string} []} =
         primi: [
 
             {
-                name: 'il sorriso di angelica',
+                name: 'il sorriso di Angelica',
                 description: 'riso carnaroli, zucca delica, speck del Trentino',
                 price: 12.00,
                 image: 'primo1',

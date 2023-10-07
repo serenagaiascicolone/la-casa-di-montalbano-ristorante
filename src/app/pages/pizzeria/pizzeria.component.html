@@ -1,25 +1,31 @@
 <app-hero></app-hero>
 
-  <section class="m-3 d-flex flex-column justify-content-center align-items-center gap-3">
-    <div class="py-2 pb-5 d-flex flex-column align-items-center">
+  <section class="m-3 d-flex flex-column  justify-content-center align-items-center gap-3">
+    <div class=" py-2 pb-5 d-flex flex-column align-items-center">
       <h3 class="fw-bold text-uppercase text-dark title-cards-menu"> Le nostre pizze </h3>
       <p> Tutte le pizze sono disponibili con impasti alternativi*</p>
     </div>
 
-    <div  *ngFor="let pizza of pizze" class="card mb-3 border border-0" style="max-width: 500px;">
-        <div class="row g-0 align-items-center gap-2">
-          <div class="col-5 img-card-menu-container" style="width: 100px;">
-            <img src="../../../assets/images/pizze-list/{{pizza.img}}.png" class="img-fluid rounded-start img-card-menu" alt="...">
-          </div>
-            <div class="col-6 text-card-menu-container" style="width: 200px;">
-            <div class="card-body">
-              <h5 class="card-title fw-bold">{{pizza.name}}</h5>
-              <p class="card-text"> {{pizza.description}} </p>
-              <p class="card-text"><small class="text-muted">€ {{pizza.price}} </small></p>
-            </div>
+    <div class="
+    container-lg col col-lg-8 d-lg-flex gap-lg-5 flex-lg-row flex-lg-wrap justify-content-center 
+    d-flex flex-column align-items-center ">
+
+  <div  *ngFor="let pizza of pizze" class="card mb-3 border border-0 " style="max-width: 500px;">
+      <div class="row g-0 align-items-center gap-2 ">
+        <div class="col-5 img-card-menu-container" style="width: 100px;">
+          <img src="../../../assets/images/pizze-list/{{pizza.img}}.png" class="img-fluid rounded-start img-card-menu" alt="...">
+        </div>
+          <div class="col-6 text-card-menu-container" style="width: 200px;">
+          <div class="card-body">
+            <h5 class="card-title fw-bold">{{pizza.name}}</h5>
+            <p class="card-text"> {{pizza.description}} </p>
+            <p class="card-text"><small class="text-muted">€ {{pizza.price}} </small></p>
           </div>
         </div>
       </div>
-    
+    </div>
+  
+
+</div>
       <p class="py-2">*tipi di impasto: con farina di frumento, con farina integrale, con farina di kamut, al carbone vegetale</p>
   </section>

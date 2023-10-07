@@ -1,6 +1,6 @@
 <app-hero></app-hero>
    
-  <section class="m-3 d-flex flex-column justify-content-center align-items-center gap-3 my-3">
+  <section class="m-3 d-flex flex-column justify-content-center align-items-center gap-3 my-3 mx-0">
       <div class="py-2 pb-5 d-flex flex-column align-items-center">
           <h3 class="fw-bold text-uppercase text-dark title-cards-menu "> I nostri piatti </h3>
           <p class="text-center"> Sono disponibili opzioni vegetariane, vegane, senza lattosio e senza glutine</p>
@@ -17,22 +17,26 @@
                 </h4>
             </div>
     
-    
-            <div  *ngFor="let dish of item.value" class="card mb-3 border border-0" style="max-width: 500px;">
-                <div class="row g-0 align-items-center gap-2">
-                    <div class="col-5 img-card-menu-container" style="width: 100px;">
-                        <img src="../../../assets/images/restaurant-list/{{dish.image}}.png" class="img-fluid rounded-start img-card-menu" alt="...">
+            <div class=" container-lg col col-lg-8 d-lg-flex gap-lg-5 flex-lg-row flex-lg-wrap justify-content-center
+            d-flex flex-column align-items-center
+            ">
+              
+              <div  *ngFor="let dish of item.value" class="card mb-3 border border-0" style="max-width: 500px;">
+                  <div class="row g-0 align-items-center gap-2">
+                      <div class="col-5 d-flex justify-content-center img-card-menu-container" style="width: 100px;">
+                          <img src="../../../assets/images/restaurant-list/{{dish.image}}.png" class="img-fluid img-card-menu" alt="...">
+                      </div>
+                    <div class="col-6 text-card-menu-container" style="width: 200px;">
+                      <div class="card-body">
+                      <h5 class="card-title fw-bold">{{dish.name}}</h5>
+                      <p class="card-text">{{dish.description}}</p>
+                      <p class="card-text"><small class="text-muted">€ {{dish.price}} </small></p>
                     </div>
-                  <div class="col-6 text-card-menu-container" style="width: 200px;">
-                    <div class="card-body">
-                    <h5 class="card-title fw-bold">{{dish.name}}</h5>
-                    <p class="card-text">{{dish.description}}</p>
-                    <p class="card-text"><small class="text-muted">€ {{dish.price}} </small></p>
                   </div>
                 </div>
               </div>
+              
             </div>
-            
         </ng-container>
 
     </section>

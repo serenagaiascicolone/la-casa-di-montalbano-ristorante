@@ -83,36 +83,40 @@ this.scrolling = false
 routerEvents: Subscription; 
 
 // variabile per verificare l'url corrente 
-currentLocation: string; 
+currentLocation = this.router.url; 
+
+isRouteActive(url:string): boolean {
+ return this.stateSrv.isRouteActive(url)
+} 
 
 
 
 ngOnInit(): void {
   // url corrente 
-  this.routerEvents = this.router.events.subscribe(
-    (event:any)=>{
-      if(event instanceof NavigationEnd){
-        this.currentLocation = event.url;
-   
-      }
-    }
-    ) 
+  // this.routerEvents = this.router.events.subscribe(
+  //   (event:any)=>{
+  //     if(event instanceof NavigationEnd){
+  //       this.currentLocation = event.url;
+  //       console.log(this.currentLocation)
+        
+  //     }
+  //   }
+  //   ) 
     // header sta in ascolto sulle variabili che consentono il cambio menu 
-   this.sub = this.stateSrv.isHome.subscribe((value) => {
-      this.isHome = !value;
-   
-    }
-    )
-   this.sub = this.stateSrv.isRistorante.subscribe((value) => {
-      this.isRistorante = value;
+  //  this.sub = this.stateSrv.isHome.subscribe((value) => {
+  //     this.isHome = !value;
+      
+  //   }
+  //   )
+  //  this.sub = this.stateSrv.isRistorante.subscribe((value) => {
+  //     this.isRistorante = value;
   
-    })
-   this.sub = this.stateSrv.isPizzeria.subscribe((value) => {
-      this.isPizzeria = value;
+  //   })
+  //  this.sub = this.stateSrv.isPizzeria.subscribe((value) => {
+  //     this.isPizzeria = value;
   
-    }
-    )
-
+  //   }
+  //   )
   }
   
 

@@ -21,16 +21,16 @@ cards: {image: string, title: string, description: string, id: string}[]= this.d
 
 goToPizzeria() {
 this.router.navigate(['/menu-pizzeria'])
-this.stateSrv.setIsPizzeria(true);
-this.stateSrv.setIsHome(true);
+// this.stateSrv.setIsPizzeria(true);
+// this.stateSrv.setIsHome(true);
 
 }
 
 goToRistorante() {
   this.router.navigate(['/menu-ristorante'])
-  this.stateSrv.setIsRistorante(true);
-  this.stateSrv.setIsPizzeria(false);
-  this.stateSrv.setIsHome(true);
+  // this.stateSrv.setIsRistorante(true);
+  // this.stateSrv.setIsPizzeria(false);
+  // this.stateSrv.setIsHome(true);
 }
 
 ngOnInit(): void {

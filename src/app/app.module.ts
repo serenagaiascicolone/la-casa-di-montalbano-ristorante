@@ -12,6 +12,7 @@ import { FormsModule } from '@angular/forms';
 import { PizzeriaComponent } from './pages/pizzeria/pizzeria.component';
 import { RistoranteComponent } from './pages/ristorante/ristorante.component';
 import { HeroComponent } from './components/hero/hero.component';
+import { TestComponent } from './components/test/test.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { HeroComponent } from './components/hero/hero.component';
     FooterComponent,
     PizzeriaComponent,
     RistoranteComponent,
-    HeroComponent
+    HeroComponent,
+    TestComponent
   ],
   imports: [
     BrowserModule,

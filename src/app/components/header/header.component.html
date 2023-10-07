@@ -17,28 +17,28 @@
   <div *ngIf="collapse" data-bs-theme="dark" (click)="closeCollapse($event)">
       <div class="bg-dark p-4">
         <!-- LOGO COLLAPSE HOME -->
-        <h5 *ngIf= "currentLocation === '/home'" class="text-body-emphasis h4 text-uppercase tw-bold">La casa di Montalbano</h5>
+        <!-- <h5 class="text-body-emphasis h4 text-uppercase tw-bold">La casa di Montalbano</h5> -->
        
         
           <div class="d-flex gap-2 flex-wrap">
             <a class="item from-center" routerLink = 'home'  routerLinkActive="active" [routerLinkActiveOptions] = '{exact: true}'> Home</a> 
             
-            <!-- MENU HOME -->
             <a *ngFor= "let card of cards; let i = index" class="item from-center" routerLink = 'home' fragment="{{card.id}}" (click)="setIndex(i)" [ngClass]="selectedIndex === i ? 'active': ''" > {{card.title}} </a> 
             
-            <ng-container *ngIf="isHome && !isRistorante">
-              <a class="item from-center" routerLink = 'home'  routerLinkActive="active" [routerLinkActiveOptions] = 'linkActiveOptions' fragment="contatti"> Contatti</a> 
+            <!-- MENU HOME -->
+            <ng-container *ngIf="isRouteActive('home')">
+              <a class="item from-center" routerLink = 'home'  routerLinkActive="active" [routerLinkActiveOptions] = 'linkActiveOptions' fragment="contatti" > Contatti</a> 
               <a class="item from-center" routerLink = 'home'  routerLinkActive="active" [routerLinkActiveOptions] = 'linkActiveOptions' fragment="contatti" fragment="prenota" > Prenota</a>  
             </ng-container>
             
             <!-- MENU PIZZERIA -->
-            <ng-container *ngIf="isPizzeria">
+            <ng-container *ngIf="isRouteActive('/menu-pizzeria')">
               <a class="item from-center" routerLink = '/menu-pizzeria'  routerLinkActive="active" [routerLinkActiveOptions] = 'linkActiveOptions' fragment="contatti" fragment="contatti" > Contatti</a> 
               <a class="item from-center" routerLink = '/menu-pizzeria'  routerLinkActive="active" [routerLinkActiveOptions] = 'linkActiveOptions' fragment="contatti" fragment="prenota" > Prenota</a>  
             </ng-container>
 
             <!-- MENU RISTORANTE -->
-            <ng-container *ngIf="isRistorante">
+            <ng-container *ngIf="isRouteActive('/menu-ristorante')">
               <a class="item from-center" routerLink = '/menu-ristorante'  routerLinkActive="active" [routerLinkActiveOptions] = 'linkActiveOptions' fragment="contatti" fragment="contatti" > Contatti</a> 
               <a class="item from-center" routerLink = '/menu-ristorante'  routerLinkActive="active" [routerLinkActiveOptions] = 'linkActiveOptions' fragment="contatti" fragment="prenota" > Prenota</a>  
             </ng-container>
@@ -51,7 +51,8 @@
 
 
       <div class="container-fluid d-flex justify-content-end align-items-center">
-        <h5 *ngIf= "currentLocation !== '/home' && currentLocation !== '/' " class="text-light h4 text-uppercase tw-bold position-absolute start-0 p-3 ms-2 m-0">La casa di Montalbano</h5>
+        <!-- <h5 *ngIf= "currentLocation !== 'home'  " class="text-light h4 text-uppercase tw-bold position-absolute start-0 p-3 ms-2 m-0">La casa di Montalbano</h5> -->
+        <h5 *ngIf= "!isRouteActive('home')  " class="text-light h4 text-uppercase tw-bold position-absolute start-0 p-3 ms-2 m-0">La casa di Montalbano</h5>
           <button class="navbar-toggler mt-1" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon " (click)="onToggleMenu()"></span>
           </button>

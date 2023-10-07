@@ -1,7 +1,8 @@
 import { Component, HostListener, OnDestroy, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { NavigationEnd } from '@angular/router';
 import { Subscription } from 'rxjs';
+import { StatesService } from './../../services/states.service';
 
 @Component({
   selector: 'app-hero',
@@ -13,7 +14,7 @@ export class HeroComponent implements OnInit, OnDestroy{
 
 
 
-constructor(private router: Router){
+constructor(private router: Router, private activatedRoute: ActivatedRoute, private stateSrv: StatesService ){
   // url corrente 
   this.routerEvents = this.router.events.subscribe(
     (event:any)=>{
@@ -27,13 +28,21 @@ constructor(private router: Router){
 }
 
 
-
+isRouteActive(url:string): boolean {
+  return this.stateSrv.isRouteActive(url)
+ } 
 
   routerEvents: Subscription; 
   currentLocation: string; 
+  // currentLocation2 = this.router.url
 
-
+  currentFragment: string | null;
   ngOnInit(): void {
+    // console.log(this.activatedRoute.snapshot.fragment)
+    this.routerEvents = this.activatedRoute.fragment.subscribe((fragment: string | null) => {
+      this.currentFragment = fragment
+    })
+    
     }
 
   ngOnDestroy(): void {

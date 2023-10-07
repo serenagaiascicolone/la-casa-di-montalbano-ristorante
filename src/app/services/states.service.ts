@@ -8,6 +8,7 @@ export class StatesService {
   // variabili per cambiare menu => fragment contatti e prenota
   // codice ripetitivo
   //TODO: DA RIVEDERE 
+  // TODO: BUG ISPIZZERIA E SCROLL MENU (RIVEDERE ESPRESSIONE SCROLL)
   isHomeSubject: BehaviorSubject<boolean> = new BehaviorSubject(false);
   isHome = this.isHomeSubject.asObservable();
 

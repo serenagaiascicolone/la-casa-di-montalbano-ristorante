@@ -1,10 +1,5 @@
 
     <app-header></app-header>
-    <!-- <app-home></app-home> -->
-    
-    <!-- <app-pizzeria></app-pizzeria> -->
-    
-    <!-- <app-ristorante></app-ristorante> -->
-    <router-outlet></router-outlet>
+    <router-outlet (activate) = 'onActivate($event)'></router-outlet>
     <app-footer></app-footer>
 

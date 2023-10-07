@@ -1,5 +1,5 @@
 
-import {booleanAttribute, Component, HostListener, Inject, OnDestroy, OnInit } from '@angular/core';
+import { Component, HostListener, OnDestroy, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, NavigationEnd, IsActiveMatchOptions } from '@angular/router';
 import {Subscription } from 'rxjs';
 import { dataService } from 'src/app/services/data.service';
@@ -39,6 +39,7 @@ this.scrolling = false
 
   if(document.documentElement.scrollTop > 500){
     this.scrolling = true
+  
   }else {
     this.scrolling = false
   }
@@ -111,7 +112,7 @@ ngOnInit(): void {
   
     }
     )
- 
+
   }
   
 

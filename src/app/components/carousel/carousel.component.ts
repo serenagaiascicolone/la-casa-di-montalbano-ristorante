@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { dataService } from 'src/app/services/data.service';
 
 
@@ -9,9 +9,14 @@ import { dataService } from 'src/app/services/data.service';
 })
 export class CarouselComponent implements OnInit {
 
-  constructor (private dataSrv: dataService) {}
-// creo array
+  constructor (private dataSrv: dataService) {
+
+  }
+
+
+  // creo array
 slidesList = this.dataSrv.slides;
+
 
 
 currentIndex: number = 0
@@ -47,7 +52,6 @@ getPreviousSlide() {
 
 
 ngOnInit(): void {
-
   }
 }
 

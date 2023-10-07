@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, HostListener, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { NavigationEnd } from '@angular/router';
 import { Subscription } from 'rxjs';
@@ -11,6 +11,8 @@ import { Subscription } from 'rxjs';
 
 export class HeroComponent implements OnInit, OnDestroy{
 
+
+
 constructor(private router: Router){
   // url corrente 
   this.routerEvents = this.router.events.subscribe(
@@ -21,7 +23,11 @@ constructor(private router: Router){
       }
     }
     ) 
+
 }
+
+
+
 
   routerEvents: Subscription; 
   currentLocation: string; 

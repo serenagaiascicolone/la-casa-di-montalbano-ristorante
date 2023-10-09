@@ -13,6 +13,7 @@ import { PizzeriaComponent } from './pages/pizzeria/pizzeria.component';
 import { RistoranteComponent } from './pages/ristorante/ristorante.component';
 import { HeroComponent } from './components/hero/hero.component';
 import { TestComponent } from './components/test/test.component';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { TestComponent } from './components/test/test.component';
     PizzeriaComponent,
     RistoranteComponent,
     HeroComponent,
-    TestComponent
+    TestComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,

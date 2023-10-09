@@ -1,6 +1,13 @@
 @use '../../../assets/scss/variables' as *; 
 
 
+.carousel-container {
+    position: relative;
+    z-index: 10;
+    margin-top: -100vh;
+    // transition: 5s;
+}
+
 .active {
     background-color: $white;
 }
@@ -14,8 +21,15 @@
     top: 0;
     min-height: 100%;
     width: 100%;
-    overflow-x: hidden;
+    // overflow-x: hidden;
 }
 
+.carousel-container-over {
+    z-index: 99;
+}
+
+.carousel-container-not-over {
+    z-index: 2;
+}
 
 

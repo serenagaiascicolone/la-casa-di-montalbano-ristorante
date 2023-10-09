@@ -5,6 +5,7 @@ import { RistoranteComponent } from './pages/ristorante/ristorante.component';
 import { HomeComponent } from './pages/home/home.component';
 
 import { FooterComponent } from './components/footer/footer.component';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
 
 const routes: Routes = [
   {
@@ -23,6 +24,14 @@ const routes: Routes = [
   {
     path: 'menu-ristorante',
     component: RistoranteComponent,
+  },
+  {
+    path: 'not-found',
+    component: NotFoundComponent,
+  },
+  {
+    path: '**',
+    redirectTo: 'not-found',
   },
 
 ];

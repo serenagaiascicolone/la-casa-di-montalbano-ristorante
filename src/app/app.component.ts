@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { StatesService } from './services/states.service';
 
 @Component({
   selector: 'app-root',
@@ -7,7 +8,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ristorante-app';
-
+  constructor(private stateSrv: StatesService){}
 // scroll al top della pagina
 onActivate(event: any){
   window.scroll ({
@@ -16,5 +17,8 @@ onActivate(event: any){
     behavior: 'smooth'
   })
 }
-
+isRouteActive(url:string): boolean {
+  return this.stateSrv.isRouteActive(url)
+ } 
+ 
 }

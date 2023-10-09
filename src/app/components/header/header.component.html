@@ -50,10 +50,12 @@
       
 
 
-      <div class="container-fluid d-flex justify-content-end align-items-center">
+      <div class="container-fluid d-flex justify-content-center align-items-center">
         <!-- <h5 *ngIf= "currentLocation !== 'home'  " class="text-light h4 text-uppercase tw-bold position-absolute start-0 p-3 ms-2 m-0">La casa di Montalbano</h5> -->
-        <h5 *ngIf= "!isRouteActive('home')  " class="text-light h4 text-uppercase tw-bold position-absolute start-0 p-3 ms-2 m-0">La casa di Montalbano</h5>
-          <button class="navbar-toggler mt-1" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+        <!-- <h5 *ngIf= "!isRouteActive('home')  " class="text-light h4 text-uppercase tw-bold position-absolute start-0 p-3 ms-2 m-0">La casa di Montalbano</h5> -->
+        <p *ngIf="scrolling" class="text-white-50 fs-6 position-absolute mt-1 font-header text-center"> La casa di Montalbano  <br> Via A. Cammilleri, 93  - Vigata (RG)</p>
+ 
+        <button class="navbar-toggler mt-1 ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon " (click)="onToggleMenu()"></span>
           </button>
       </div>

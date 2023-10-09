@@ -11,8 +11,18 @@ import { StatesService } from './../../services/states.service';
 })
 
 export class HeroComponent implements OnInit, OnDestroy{
+scrolling: boolean;
 
-
+@HostListener('window:scroll', ['$event']) onScrollAndChangeClass(){
+   
+  if(document.documentElement.scrollTop > 0){
+    this.scrolling = true;
+    console.log(document.documentElement.scrollTop)
+  } else {
+    this.scrolling = false;
+  }
+  console.log(this.scrolling)
+}
 
 constructor(private router: Router, private activatedRoute: ActivatedRoute, private stateSrv: StatesService ){
   // url corrente 

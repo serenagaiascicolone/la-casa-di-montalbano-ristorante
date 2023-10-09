@@ -5,12 +5,12 @@
         rgba(0, 0, 0,0.3),
         rgba(0, 0, 0,0.3)
     ),
-    url('../../../assets/images/pizzeria-image.jpg');
+    url('../../../assets/images/pizzeria-image.png');
+    background-position: center right;
 }
 
 .hero {
     background-size: cover;
-    background-position: center center;
     
 }
 
@@ -25,12 +25,41 @@
     background-image: linear-gradient(
         rgba(0, 0, 0,0.3),
         rgba(0, 0, 0,0.3)
-    ),
-    url('../../../assets/images/ristorante-image.jpg');
-}
+        ),
+        url('../../../assets/images/ristorante-image.png');
+        background-position: center left;
+    }
 
 
 .font-header {
     font-family: $font-title;
 }
+
+.hero-container {
+    // display: none;
+    padding-bottom: 100vh;
+    position: relative;
+    z-index: 10;
+    height: 100%;
+    overflow: auto;
+    // overflow-y: auto;
+
+    
+}
+
+.hero-container-over {
+    pointer-events: none
+}
+.hero-vh {
+    height: 100vh;
+    position: relative; 
+}
+
+.hero-logo {
+    height: 100%;
+    display: table;
+    width: 100%;
+}
+
+
 

@@ -1,16 +1,57 @@
-
-<div *ngIf= "isRouteActive('/menu-pizzeria') || isRouteActive('/menu-ristorante')" class="h-50 d-flex justify-content-center d-flex  align-items-center hero"
-[ngClass]="{'hero-pizzeria': isRouteActive('/menu-pizzeria'),
-'hero-ristorante': isRouteActive('/menu-ristorante')}" >
-    <!-- <h1 class="w-50  text-center ms-auto p-4 fw-bold hero-text text-light"> Menu
-    </h1> -->
-  </div>
-
+<!-- 
   <div *ngIf= "isRouteActive('home')" class="bg-dark h-100 d-flex flex-column align-items-center w-100 justify-content-center hero-home"  >
     <span class="container-fluid pb-5 text-center">
       <h1 class="text-white-50 fs-1 font-header"> La casa di </h1>
       
       <h1 class="text-white-50 fs-1 font-header">  Montalbano</h1>
     </span>
+
     <p class="text-white-50 fs-6 position-absolute bottom-0 pb-1 font-header"> Via A. Cammilleri, 93  - Vigata (RG) </p>
+  </div> -->
+
+
+  <div *ngIf= "isRouteActive('home')" class="hero-container" [ngClass]="{'hero-container-over' : scrolling === true }">
+    <div class="hero-vh">
+      <div class="hero-logo">
+
+
+        <div  class="bg-dark h-100 d-flex flex-column align-items-center w-100 justify-content-center hero"  >
+          <span class="container-fluid  text-center">
+            <h1 class="text-white-50 fs-1 font-header"> La casa di </h1>
+            
+            <h1 class="text-white-50 fs-1 font-header">  Montalbano</h1>
+          </span>
+        </div>
+        
+        <p class="text-white-50 fs-6 position-absolute bottom-0 pb-3 font-header text-center start-0 end-0"> Via A. Cammilleri, 93  - Vigata (RG) </p>
+        
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- PIZZERIA E RISTORANTE -->
+  <div *ngIf= "isRouteActive('/menu-pizzeria') || isRouteActive('/menu-ristorante')" class="bg-dark h-100 d-flex flex-column align-items-center w-100 justify-content-center hero-home">
+    <span *ngIf= "isRouteActive('/menu-ristorante')"class="container-fluid pb-5 text-center">
+      <h1 class="text-white-50 fs-1 font-header"> Ristorante </h1>
+      
+      <h1 class="text-white-50 fs-1 font-header">  Menu </h1>
+    </span>
+    <span *ngIf= "isRouteActive('/menu-pizzeria')"class="container-fluid pb-5 text-center">
+      <h1 class="text-white-50 fs-1 font-header"> Pizzeria </h1>
+      
+      <h1 class="text-white-50 fs-1 font-header">  Menu </h1>
+    </span>
+    
+    <p class="text-white-50 fs-6 position-absolute bottom-0 pb-1 font-header text-center"> La casa di Montalbano  <br> Via A. Cammilleri, 93  - Vigata (RG)</p>
   </div>

@@ -8,6 +8,9 @@ body, html {
 body {
     font-family: $font-general;
     background-color: $white;
+
+        
+
 }
 
 
@@ -18,4 +21,8 @@ h1, h2, h3, h4, h5, h6, p, address {
 
 .margin-top {
     margin-top: 60px;
+}
+
+*::-webkit-scrollbar {
+    display: none; 
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit, HostListener } from '@angular/core';
+import { TitleStrategy } from '@angular/router';
 import { dataService } from 'src/app/services/data.service';
 
 
@@ -10,8 +11,37 @@ import { dataService } from 'src/app/services/data.service';
 export class CarouselComponent implements OnInit {
 
   constructor (private dataSrv: dataService) {
-
+    this.scrolling = false
+    // this.opacity = 0;
   }
+  
+  opacity: number;
+  scrolling: boolean; 
+  opacityString: string; 
+  @HostListener('window:scroll', ['$event']) onScrollEvent(){
+    let scroll = document.documentElement.scrollTop
+      if(scroll >= 1){
+        this.opacity = 0 + Math.round((scroll/1) * 10) / 10
+        // this.opacity = Math.max(0, Math.min(1, -scroll/500 + 2))
+        this.opacityString = String(this.opacity)
+      
+      }
+  }
+
+
+ 
+  // @HostListener('window:scroll', ['$event']) onScrollAndChangeClass(){
+   
+  //     if(document.documentElement.scrollTop > 6){
+  //       this.scrolling = true;
+  //       console.log(document.documentElement.scrollTop)
+  //     } else {
+  //       this.scrolling = false;
+  //     }
+  //     console.log(this.scrolling)
+  //   }
+
+   
 
 
   // creo array
@@ -52,6 +82,7 @@ getPreviousSlide() {
 
 
 ngOnInit(): void {
+
   }
 }
 

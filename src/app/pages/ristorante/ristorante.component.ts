@@ -13,6 +13,8 @@ export class RistoranteComponent {
 
   constructor(private dataSrv: dataService){}
 dishes = this.dataSrv.restaurantList;
+
+// ordine di categoria piatti
 keepOrder = (a: any, b: any) => {
   return a;
 }

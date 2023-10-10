@@ -9,28 +9,24 @@ import { StatesService } from './../../services/states.service';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  isHome: boolean; 
+
  
 
   constructor(private router: Router, 
-    private activeRoute: ActivatedRoute, 
     private dataSrv: dataService,
-    private stateSrv: StatesService){
+   ){
   }
 cards: {image: string, title: string, description: string, id: string}[]= this.dataSrv.cardsList
 
 goToPizzeria() {
 this.router.navigate(['/menu-pizzeria'])
-// this.stateSrv.setIsPizzeria(true);
-// this.stateSrv.setIsHome(true);
+
 
 }
 
 goToRistorante() {
   this.router.navigate(['/menu-ristorante'])
-  // this.stateSrv.setIsRistorante(true);
-  // this.stateSrv.setIsPizzeria(false);
-  // this.stateSrv.setIsHome(true);
+  
 }
 
 ngOnInit(): void {

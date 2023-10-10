@@ -15,6 +15,8 @@ export class CarouselComponent implements OnInit {
     // this.opacity = 0;
   }
   
+
+  // aumentare opacity in base allo scroll del documento
   opacity: number;
   scrolling: boolean; 
   opacityString: string; 
@@ -22,24 +24,11 @@ export class CarouselComponent implements OnInit {
     let scroll = document.documentElement.scrollTop
       if(scroll >= 1){
         this.opacity = 0 + Math.round((scroll/1) * 10) / 10
-        // this.opacity = Math.max(0, Math.min(1, -scroll/500 + 2))
+        // diminuire opacità: this.opacity = Math.max(0, Math.min(1, -scroll/500 + 2))
         this.opacityString = String(this.opacity)
       
       }
   }
-
-
- 
-  // @HostListener('window:scroll', ['$event']) onScrollAndChangeClass(){
-   
-  //     if(document.documentElement.scrollTop > 6){
-  //       this.scrolling = true;
-  //       console.log(document.documentElement.scrollTop)
-  //     } else {
-  //       this.scrolling = false;
-  //     }
-  //     console.log(this.scrolling)
-  //   }
 
    
 

@@ -1,55 +1,26 @@
 @use '../../../assets/scss/variables' as *;
 
-.hero-pizzeria {
-    background-image: linear-gradient(
-        rgba(0, 0, 0,0.3),
-        rgba(0, 0, 0,0.3)
-    ),
-    url('../../../assets/images/pizzeria-image.png');
-    background-position: center right;
-}
-
-.hero {
-    background-size: cover;
-    
-}
-
-
-.hero-text {
-    text-shadow: 5px 1px 10px $black;
-}
-
-
-
-.hero-ristorante {
-    background-image: linear-gradient(
-        rgba(0, 0, 0,0.3),
-        rgba(0, 0, 0,0.3)
-        ),
-        url('../../../assets/images/ristorante-image.png');
-        background-position: center left;
-    }
 
 
 .font-header {
     font-family: $font-title;
 }
 
+
 .hero-container {
-    // display: none;
     padding-bottom: 100vh;
     position: relative;
     z-index: 10;
     height: 100%;
-    overflow: auto;
-    // overflow-y: auto;
-
-    
+    overflow: auto;    
 }
 
+// si attiva quando si triggera la funzione dell'Host Listener  
 .hero-container-over {
     pointer-events: none
 }
+
+
 .hero-vh {
     height: 100vh;
     position: relative; 

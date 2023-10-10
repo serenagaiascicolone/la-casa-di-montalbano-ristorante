@@ -16,20 +16,5 @@
     background-color: $light-gray;
 }
 
-.altezza {
-    position: absolute;
-    top: 0;
-    min-height: 100%;
-    width: 100%;
-    // overflow-x: hidden;
-}
-
-.carousel-container-over {
-    z-index: 99;
-}
-
-.carousel-container-not-over {
-    z-index: 2;
-}
 
 

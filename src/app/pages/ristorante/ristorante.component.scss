@@ -2,18 +2,6 @@
 @use '../../../assets/scss/variables' as *;
 
 
-.hero {
-    background-image: linear-gradient(
-        rgba(0, 0, 0,0.6),
-        rgba(0, 0, 0,0.6)
-    ),
-    url('../../../assets/images/ristorante-image.jpg');
-    background-size: cover;
-    background-position: center center;
-
-}
-
-
 .title-cards-menu{
     border-bottom: 2px solid $green;
 }

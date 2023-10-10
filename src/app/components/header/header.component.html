@@ -1,25 +1,13 @@
+<!-- TODO: CLICK SU HAMBURGER MENU PER ALZARE HERO -->
 
-<!-- <div *ngIf= "currentLocation === '/home' || currentLocation === '/' " class="bg-dark h-100 d-flex flex-column align-items-center w-100 justify-content-center position-relative">
-  <span class="container-fluid pb-5 text-center">
-    <h1 class="text-white-50 fs-1 font-header"> La casa di </h1>
-    
-    <h1 class="text-white-50 fs-1 font-header">  Montalbano</h1>
-  </span>
-  <p class="text-white-50 fs-6 position-absolute bottom-0 pb-1 font-header"> Via A. Cammilleri, 93  - Vigata (RG) </p>
-</div> -->
 
-<!-- NAV Home -->
-<!-- ngIF => show menu -->
+<!-- posizionare la header in alto quando scrolliamo la pagina -->
 <header [ngClass]="{'': !scrolling, 'scrolled': scrolling}">
-
-
-
+  <!-- far scendere il collapse quando clicchiamo sull'hamburger menu -->
   <div *ngIf="collapse" data-bs-theme="dark" (click)="closeCollapse($event)">
       <div class="bg-dark p-4">
         <!-- LOGO COLLAPSE HOME -->
         <!-- <h5 class="text-body-emphasis h4 text-uppercase tw-bold">La casa di Montalbano</h5> -->
-       
-        
           <div class="d-flex gap-2 flex-wrap">
             <a class="item from-center" routerLink = 'home'  routerLinkActive="active" [routerLinkActiveOptions] = '{exact: true}'> Home</a> 
             
@@ -51,8 +39,6 @@
 
 
       <div class="container-fluid d-flex justify-content-center align-items-center">
-        <!-- <h5 *ngIf= "currentLocation !== 'home'  " class="text-light h4 text-uppercase tw-bold position-absolute start-0 p-3 ms-2 m-0">La casa di Montalbano</h5> -->
-        <!-- <h5 *ngIf= "!isRouteActive('home')  " class="text-light h4 text-uppercase tw-bold position-absolute start-0 p-3 ms-2 m-0">La casa di Montalbano</h5> -->
         <p *ngIf="scrolling" class="text-white-50 fs-6 position-absolute mt-1 font-header text-center"> La casa di Montalbano  <br> Via A. Cammilleri, 93  - Vigata (RG)</p>
  
         <button class="navbar-toggler mt-1 ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">

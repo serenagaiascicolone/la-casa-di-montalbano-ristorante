@@ -1,5 +1,4 @@
 
-
     <app-header [ngStyle]="{'display': isRouteActive('not-found')?  'none' : 'block' }"></app-header>
     <router-outlet (activate) = 'onActivate($event)'></router-outlet>
         <app-footer [ngStyle]="{'display': isRouteActive('not-found')?  'none' : 'block' }"></app-footer> 

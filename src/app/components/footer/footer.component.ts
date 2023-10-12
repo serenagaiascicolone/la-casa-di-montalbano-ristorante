@@ -17,6 +17,7 @@ ngOnInit(): void {
 
 goToContatti(){
 this.router.navigate(['/contatti'])
+console.log(this.router)
 }
 
 }

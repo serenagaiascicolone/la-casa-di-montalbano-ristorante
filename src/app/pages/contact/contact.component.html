@@ -1,57 +1,72 @@
 <!-- https://www.settimoristorante.it/contattaci/  -->
 
-<div>
-    <h1> Contattaci </h1>
-    <h2> la casa di montalbano - ristorante e pizzeria </h2>
-    <section>
-        <p> <span>Aperto tutti i giorni dell'anno </span> dalle 20.00 alle 23.00 </p>
-        <address> Via A. Cammilleri, 93 - Vigata (RG) </address>
-        <p> Email: <span>lacasadimontalbano@zingaretti.it </span></p>
-        <p> Tel: 02-123456 </p>
+<div class="container-fluid d-flex flex-column align-items-center gap-3 p-5">
+    <h1 class="text-warning fw-bold fs-2"> Contattaci </h1>
+    <h2 class="text-uppercase font-header" > la casa di montalbano - ristorante e pizzeria </h2>
+    <section class="text-center d-flex flex-column gap-2">
+        <p class="fs-5"> <span class="fw-bold">Aperto tutti i giorni  </span> dalle 19.00 alle 00.00 </p>
+        <address class="fs-5 fst-italic"> Via A. Cammilleri, 93 - Vigata (RG) </address>
+        <p class="fs-5"> Email: <span class="fw-bold text-primary">lacasadimontalbano@zingaretti.it </span></p>
+        <p class="fs-5"> Telefono: 02-123456 </p>
     </section>
 </div>
 
-<form action="">
-    <ul>
-        <li>
-            <label for=""> Nome </label>
-            <input type="text" placeholder="inserisci nome">
-            
-        </li>
-        <li>
-            <label for=""> Cognome </label>
-            <input type="text" placeholder="inserisci cognome">
-            
-        </li>
-        <li>
-            <label for=""> Email </label>
-            <input type="email" placeholder="inserisci la tua email">
-            
-        </li>
-        <li>
-            <label for=""> Telefono </label>
-            <input type="number" placeholder="inserisci il tuo numero di telefono">
 
-        </li>
-        <li>
-            <label for=""> Messaggio </label>
-            <textarea name="" id="" cols="30" rows="10" placeholder="scrivi qui il tuo messaggio"></textarea>
+<!-- FORM -->
+<section class="container-fluid container-lg d-flex justify-content-center p-5">
+    <form action="" class="row row-cols-1 d-flex">
+        <div class="col-6 mb-3">
+            <label for="name" class="form-label fs-6 text-uppercase fw-bold">Nome</label>
+            <input type="text" class="form-control" id="name" placeholder="nome">
+          </div>
+          <div class="col-6 mb-3">
+            <label for="surname" class="form-label  fs-6 text-uppercase fw-bold">Cognome</label>
+            <input type="text" class="form-control" id="surname" placeholder="cognome">
+          </div>
+          <div class="col-6 mb-3">
+            <label for="exampleInputEmail1" class="form-label  fs-6 text-uppercase fw-bold">Email </label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="indirizzo email">
+            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+          </div>
+          <div class="col-6 mb-3">
+            <!-- TODO: SISTEMARE INPUT NUMBER -->
+            <label for="telephone" class="form-label  fs-6 text-uppercase fw-bold">Telefono</label>
+            <input type="tel" class="form-control" id="telephone" placeholder="numero di telefono">
+          </div>
+          <div class="col-12">  
+            <label for="user-message" class="fs-6 text-uppercase fw-bold pb-2">Messaggio</label>
+            <textarea name="user-message" id="user-message" cols="20"  rows="10" class="form-control" placeholder="Scrivi le tue richieste, grazie."></textarea>
+        </div>
 
-        </li>
-        <li>
-            <label for=""> Consenso a ricevere mail per marketing</label>
-            <input type="name" type="checkbox" value="Accetto">
-            
-        </li>
-        <li>
-            <label for=""> Privacy policy </label>
+        <section class="col-12 d-flex mt-2 gap-3 ">
+            <div class="col-6 d-flex flex-column gap-2 justify-content-start">
+                <p class="fs-6 fw-bold"> Consenso a ricevere mail per marketing </p>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="accept" id="accept" checked>
+                    <label class="form-check-label" for="flexRadioDefault1">
+                      Accetto
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="not-accept" id="not-accept" >
+                    <label class="form-check-label" for="flexRadioDefault2">
+                      Non accetto
+                    </label>
+                  </div>
+                  <p> Letta l'<a class="text-decoration-none text-success fw-bold text-justify" href="*"> Informativa Privacy </a>, clicando su 'accetto' acconsento al trattamento dei miei dati personali per i fini marketing e commerciali descritti al punto 2.3. </p>
+            </div>
+            <div class="col-6 d-flex flex-column gap-2">
+                <p class="fs-6 fw-bold"> Policy Privacy </p>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="accept-personal-date" id="accept-personal-date" checked>
+                    <label class="form-check-label" for="flexRadioDefault1">
+                      Accetto che <a href="#" class="text-decoration-none fw-bold text-success">i miei dati personali vengano elaborati</a> 
+                    </label>
+                  </div>
+            </div>
+        </section>
+        <button class="col-6  ms-auto my-3 btn btn-warning"> Invia </button>
+    </form>
+</section>
 
-        </li>
-        <li>
-
-        </li>
-    </ul>
-
-    <p>Letta l' <span> Informativa Privacy</span>, cliccando su "accetto" acconsento al trattamento dei miei dati personali per i fini marketing e commerciali.</p>
-    <button type="submit"> Invia </button>
-</form>
+<!-- TODO: CARD COMPONENTE -->

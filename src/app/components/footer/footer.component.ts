@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { dataService } from 'src/app/services/data.service';
 
 @Component({
@@ -8,10 +9,14 @@ import { dataService } from 'src/app/services/data.service';
 })
 export class FooterComponent implements OnInit{
 
-constructor(private dataSrv: dataService){}
+constructor(private router: Router){}
 
 ngOnInit(): void {
  
+}
+
+goToContatti(){
+this.router.navigate(['/contatti'])
 }
 
 }

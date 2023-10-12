@@ -11,8 +11,9 @@
     padding-bottom: 100vh;
     position: relative;
     z-index: 10;
-    height: 100%;
-    overflow: auto;    
+    height: 100vh;
+    overflow: auto;  
+    transition: all 5s linear;  
 }
 
 // si attiva quando si triggera la funzione dell'Host Listener  
@@ -20,6 +21,19 @@
     pointer-events: none
 }
 
+.hero-container-down {
+    
+    height: 100vh;
+  
+}
+.hero-container-up {
+    transition: all 2s linear;  
+    padding-bottom: 0;
+    height: 0;
+    // bottom: 100vh;
+    z-index: 1;
+    // pointer-events: none
+}
 
 .hero-vh {
     height: 100vh;

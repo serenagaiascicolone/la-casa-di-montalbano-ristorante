@@ -31,12 +31,17 @@ isRouteActive(url:string): boolean {
   return this.stateSrv.isRouteActive(url)
  } 
 
+sub: Subscription;
+isHeroUp: boolean;
 
   ngOnInit(): void {
-    
+   this.sub = this.stateSrv.isHeroUp.subscribe((value) => {
+      this.isHeroUp = value;
+    })    
     }
 
   ngOnDestroy(): void {
+    this.sub.unsubscribe()
   }
 
 }

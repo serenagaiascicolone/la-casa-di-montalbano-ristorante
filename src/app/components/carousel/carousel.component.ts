@@ -1,5 +1,5 @@
-import { Component, OnInit, HostListener } from '@angular/core';
-import { TitleStrategy } from '@angular/router';
+import { Component, OnInit, HostListener, OnDestroy } from '@angular/core';
+import { interval, Subscription } from 'rxjs';
 import { dataService } from 'src/app/services/data.service';
 
 
@@ -8,7 +8,7 @@ import { dataService } from 'src/app/services/data.service';
   templateUrl: './carousel.component.html',
   styleUrls: ['./carousel.component.scss']
 })
-export class CarouselComponent implements OnInit {
+export class CarouselComponent implements OnInit, OnDestroy {
 
   constructor (private dataSrv: dataService) {
     this.scrolling = false
@@ -68,10 +68,14 @@ getPreviousSlide() {
 }
 
 
-
+slideSub: Subscription
 
 ngOnInit(): void {
-
+ this.slideSub = interval(5000).subscribe(value => this.getNextSlide())
   }
+
+ngOnDestroy(): void {
+  this.slideSub.unsubscribe()
+}
 }
 

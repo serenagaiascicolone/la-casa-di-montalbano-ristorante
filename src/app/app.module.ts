@@ -14,6 +14,7 @@ import { RistoranteComponent } from './pages/ristorante/ristorante.component';
 import { HeroComponent } from './components/hero/hero.component';
 import { TestComponent } from './components/test/test.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { ContactComponent } from './pages/contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
     RistoranteComponent,
     HeroComponent,
     TestComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,

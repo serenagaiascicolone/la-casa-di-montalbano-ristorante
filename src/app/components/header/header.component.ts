@@ -23,6 +23,8 @@ this.scrolling = false
 
 
 
+
+
 // array per ciclare e creare menu e cards in sections
   cards:{image: string, title: string, description: string, id: string}[] = this.dataSrv.cardsList
   
@@ -62,6 +64,7 @@ this.scrolling = false
  collapse = false;
  onToggleMenu() {
    this.collapse = !this.collapse; 
+   this.stateSrv.setIsHero(true)
   }
   
   

@@ -18,31 +18,11 @@ export class StatesService {
   return this.router.isActive(url, matchOptions);
 }
 
+  isHeroUpSubject: BehaviorSubject<boolean> = new BehaviorSubject(false);
+  isHeroUp = this.isHeroUpSubject.asObservable();
 
+  setIsHero = (value: boolean) => {
+    this.isHeroUpSubject.next(value)
+  }
 
-
-  // variabili per cambiare menu => fragment contatti e prenota
-  // codice ripetitivo
-
-  // isHomeSubject: BehaviorSubject<boolean> = new BehaviorSubject(false);
-  // isHome = this.isHomeSubject.asObservable();
-
-  // setIsHome = (value: boolean) => {
-  //   this.isHomeSubject.next(value)
-  // }
-
-
-  // isRistoranteSubject: BehaviorSubject<boolean> = new BehaviorSubject(false);
-  // isRistorante = this.isRistoranteSubject.asObservable();
-
-  // setIsRistorante = (value: boolean) => {
-  //   this.isRistoranteSubject.next(value)
-  // }
-
-  // isPizzeriaSubject: BehaviorSubject<boolean> = new BehaviorSubject(false);
-  // isPizzeria= this.isPizzeriaSubject.asObservable();
-
-  // setIsPizzeria = (value: boolean) => {
-  //   this.isPizzeriaSubject.next(value)
-  // }
 }

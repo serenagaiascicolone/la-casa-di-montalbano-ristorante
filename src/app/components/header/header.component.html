@@ -1,8 +1,8 @@
-<!-- TODO: CLICK SU HAMBURGER MENU PER ALZARE HERO -->
+
 
 
 <!-- posizionare la header in alto quando scrolliamo la pagina -->
-<header [ngClass]="{'': !scrolling, 'scrolled': scrolling}">
+<header [ngClass]="{'not-scrolled': !scrolling, 'scrolled': scrolling}">
   <!-- far scendere il collapse quando clicchiamo sull'hamburger menu -->
   <div *ngIf="collapse" data-bs-theme="dark" (click)="closeCollapse($event)">
       <div class="bg-dark p-4">

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 
 
@@ -7,9 +7,13 @@ import { Component } from '@angular/core';
   templateUrl: './test.component.html',
   styleUrls: ['./test.component.scss']
 })
-export class TestComponent {
-
+export class TestComponent implements OnInit {
+@Input() payload: {user: {name: string, surname: string, email: string, telephone: number}, message: string, consent: {marketing: string, privacy: null | boolean }}
  
+ngOnInit(): void {
+console.log(this.payload.user.name)
+}
+
 }
 
 

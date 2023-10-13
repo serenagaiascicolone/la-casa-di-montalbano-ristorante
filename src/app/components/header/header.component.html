@@ -1,11 +1,11 @@
-
+<!-- TODO: rendere trasparente header quando scende collapse in modo da evitare la sovrapposizione con il nome del locale -->
 
 
 <!-- posizionare la header in alto quando scrolliamo la pagina -->
 <header [ngClass]="{'not-scrolled': !scrolling, 'scrolled': scrolling}">
   <!-- far scendere il collapse quando clicchiamo sull'hamburger menu -->
   <div *ngIf="collapse" data-bs-theme="dark" (click)="closeCollapse($event)">
-    <div class="bg-dark p-4">
+    <div class="bg-dark p-4 d-flex flex-lg-row flex-column  justify-content-between">
         <!-- LOGO COLLAPSE HOME -->
         <!-- <h5 class="text-body-emphasis h4 text-uppercase tw-bold">La casa di Montalbano</h5> -->
           <div class="d-flex gap-2 flex-wrap">
@@ -21,23 +21,35 @@
             
             <!-- MENU PIZZERIA -->
             <ng-container *ngIf="isRouteActive('/menu-pizzeria')">
-              <a class="item from-center" routerLink = '/menu-pizzeria'  routerLinkActive="active" [routerLinkActiveOptions] = 'linkActiveOptions' fragment="contatti" fragment="contatti" > Contatti</a> 
-              <a class="item from-center" routerLink = '/menu-pizzeria'  routerLinkActive="active" [routerLinkActiveOptions] = 'linkActiveOptions' fragment="contatti" fragment="prenota" > Prenota</a>  
+              <a class="item from-center fs-5" routerLink = '/menu-pizzeria'  routerLinkActive="active" [routerLinkActiveOptions] = 'linkActiveOptions' fragment="contatti" fragment="contatti" > Contatti</a> 
+              <a class="item from-center fs-5" routerLink = '/menu-pizzeria'  routerLinkActive="active" [routerLinkActiveOptions] = 'linkActiveOptions' fragment="contatti" fragment="prenota" > Prenota</a>  
             </ng-container>
 
             <!-- MENU RISTORANTE -->
             <ng-container *ngIf="isRouteActive('/menu-ristorante')">
-              <a class="item from-center" routerLink = '/menu-ristorante'  routerLinkActive="active" [routerLinkActiveOptions] = 'linkActiveOptions' fragment="contatti" fragment="contatti" > Contatti</a> 
-              <a class="item from-center" routerLink = '/menu-ristorante'  routerLinkActive="active" [routerLinkActiveOptions] = 'linkActiveOptions' fragment="contatti" fragment="prenota" > Prenota</a>  
+              <a class="item from-center fs-5" routerLink = '/menu-ristorante'  routerLinkActive="active" [routerLinkActiveOptions] = 'linkActiveOptions' fragment="contatti" fragment="contatti" > Contatti</a> 
+              <a class="item from-center fs-5" routerLink = '/menu-ristorante'  routerLinkActive="active" [routerLinkActiveOptions] = 'linkActiveOptions' fragment="contatti" fragment="prenota" > Prenota</a>  
+            </ng-container>
+
+            <ng-container *ngIf="isRouteActive('/contatti')">
+              <a class="item from-center fs-5" routerLink = '/contatti'  routerLinkActive="active" [routerLinkActiveOptions] = 'linkActiveOptions' fragment="contatti" fragment="contatti" > Contatti</a> 
+              <a class="item from-center fs-5" routerLink = '/contatti'  routerLinkActive="active" [routerLinkActiveOptions] = 'linkActiveOptions' fragment="contatti" fragment="prenota" > Prenota</a>  
             </ng-container>
           
           </div>
+          
+          <!-- social-bar -->
+          <section class="d-flex gap-3 align-items-center">
+            <h3 class="text-uppercase text-warning-emphasis fs-5">Visita i nostri canali social</h3>
+          <a href="">    <i class="bi bi-facebook fs-5 text-warning"></i>  </a> 
+           <a href=""><i class="bi bi-instagram fs-5 text-warning"></i></a> 
+          </section>
       </div>
     </div>
     <nav class="navbar navbar-dark bg-dark">
       
       <!-- HAMBURGER MENU + HEADER TITLE  -->
-      <div class="container-fluid d-flex justify-content-center align-items-center">
+      <div class="container-fluid d-flex justify-content-center align-items-center ">
         <p *ngIf="scrolling" class="text-white-50 fs-6 position-absolute mt-1 font-header text-center"> La casa di Montalbano  <br> Via A. Cammilleri, 93  - Vigata (RG)</p>
         <img src="../../../assets/images/logo.png" alt="" style="max-width: 50px;">
         <button class="navbar-toggler mt-1 ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">

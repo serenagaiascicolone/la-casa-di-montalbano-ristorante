@@ -4,3 +4,12 @@
 font-family: $font-title;
 }
 
+.active {
+  color: $red;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.link {
+    text-decoration: none;
+}

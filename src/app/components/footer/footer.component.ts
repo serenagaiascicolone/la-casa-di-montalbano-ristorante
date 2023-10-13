@@ -11,13 +11,30 @@ export class FooterComponent implements OnInit{
 
 constructor(private router: Router){}
 
+
+
 ngOnInit(): void {
  
 }
+// attivare la classe 'active' nei button quando vengono cliccati 
+activeButton: string
+setActive (buttonName: string){
+  this.activeButton = buttonName;
+
+}
+
+isActive (buttonName: string){
+  return this.activeButton === buttonName
+}
+
 
 goToContatti(){
 this.router.navigate(['/contatti'])
-console.log(this.router)
+this.setActive('contatti')
+}
+
+goToStoreLocator() {
+  this.setActive('map')
 }
 
 }

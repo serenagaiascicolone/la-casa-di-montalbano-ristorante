@@ -21,5 +21,15 @@ $font-sizes: (
   5: $font-size-five,
   6: $font-size-six
 );
+
+// bordi input attivi
+$min-contrast-ratio: 2.5;
+
+$component-active-bg: $yellow;
+$input-btn-focus-color-opacity: .25;
+$input-btn-focus-color:  rgba($component-active-bg, $input-btn-focus-color-opacity);
+$input-btn-focus-blur:          0;
+$input-btn-focus-width:         .25rem;
+$input-btn-focus-box-shadow:    0 0 $input-btn-focus-blur $input-btn-focus-width $input-btn-focus-color;
 //import bootstrap
 @import '../../../node_modules/bootstrap/scss/bootstrap.scss'

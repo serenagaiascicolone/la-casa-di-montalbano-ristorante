@@ -8,13 +8,15 @@ import { HeaderComponent } from './components/header/header.component';
 import { CarouselComponent } from './components/carousel/carousel.component';
 
 import { FooterComponent } from './components/footer/footer.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PizzeriaComponent } from './pages/pizzeria/pizzeria.component';
 import { RistoranteComponent } from './pages/ristorante/ristorante.component';
 import { HeroComponent } from './components/hero/hero.component';
 import { TestComponent } from './components/test/test.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { ContactComponent } from './pages/contact/contact.component';
+import { FormComponent } from './components/form/form.component';
+import { CardComponent } from './components/card/card.component';
 
 @NgModule({
   declarations: [
@@ -28,12 +30,15 @@ import { ContactComponent } from './pages/contact/contact.component';
     HeroComponent,
     TestComponent,
     NotFoundComponent,
-    ContactComponent
+    ContactComponent,
+    FormComponent,
+    CardComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

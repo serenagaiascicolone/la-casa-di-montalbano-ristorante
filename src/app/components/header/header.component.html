@@ -9,14 +9,14 @@
         <!-- LOGO COLLAPSE HOME -->
         <!-- <h5 class="text-body-emphasis h4 text-uppercase tw-bold">La casa di Montalbano</h5> -->
           <div class="d-flex gap-2 flex-wrap">
-            <a class="item from-center" routerLink = 'home'  routerLinkActive="active" [routerLinkActiveOptions] = '{exact: true}'> Home</a> 
+            <a class="item from-center fs-5" routerLink = 'home'  routerLinkActive="active" [routerLinkActiveOptions] = '{exact: true}'> Home</a> 
             
-            <a *ngFor= "let card of cards; let i = index" class="item from-center" routerLink = 'home' fragment="{{card.id}}" (click)="setIndex(i)" [ngClass]="selectedIndex === i ? 'active': ''" > {{card.title}} </a> 
+            <a *ngFor= "let card of cards; let i = index" class="item from-center fs-5" routerLink = 'home' fragment="{{card.id}}" (click)="setIndex(i)" [ngClass]="selectedIndex === i ? 'active': ''" > {{card.title}} </a> 
             
             <!-- MENU HOME -->
             <ng-container *ngIf="isRouteActive('home')">
-              <a class="item from-center" routerLink = 'home'  routerLinkActive="active" [routerLinkActiveOptions] = 'linkActiveOptions' fragment="contatti" > Contatti</a> 
-              <a class="item from-center" routerLink = 'home'  routerLinkActive="active" [routerLinkActiveOptions] = 'linkActiveOptions' fragment="contatti" fragment="prenota" > Prenota</a>  
+              <a class="item from-center fs-5" routerLink = 'home'  routerLinkActive="active" [routerLinkActiveOptions] = 'linkActiveOptions' fragment="contatti" > Contatti</a> 
+              <a class="item from-center fs-5" routerLink = 'home'  routerLinkActive="active" [routerLinkActiveOptions] = 'linkActiveOptions' fragment="contatti" fragment="prenota" > Prenota</a>  
             </ng-container>
             
             <!-- MENU PIZZERIA -->

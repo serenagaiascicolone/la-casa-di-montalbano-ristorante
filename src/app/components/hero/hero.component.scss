@@ -22,22 +22,23 @@
 }
 
 .hero-container-down {
+    position: relative; 
     
     height: 100vh;
   
 }
 .hero-container-up {
     transition: all 2s linear;  
-    padding-bottom: 0;
+    // padding-bottom: 0;
     height: 0;
-    // bottom: 100vh;
+    bottom: 100vh;
     z-index: 1;
     // pointer-events: none
 }
 
 .hero-vh {
-    height: 100vh;
     position: relative; 
+    height: 100vh;
 }
 
 .hero-logo {

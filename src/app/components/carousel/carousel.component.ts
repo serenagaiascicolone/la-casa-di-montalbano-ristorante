@@ -1,6 +1,7 @@
 import { Component, OnInit, HostListener, OnDestroy } from '@angular/core';
 import { interval, Subscription } from 'rxjs';
 import { dataService } from 'src/app/services/data.service';
+import { StatesService } from 'src/app/services/states.service';
 
 
 @Component({
@@ -10,10 +11,14 @@ import { dataService } from 'src/app/services/data.service';
 })
 export class CarouselComponent implements OnInit, OnDestroy {
 
-  constructor (private dataSrv: dataService) {
+  constructor (private dataSrv: dataService, private stateSrv: StatesService) {
     this.scrolling = false
     // this.opacity = 0;
   }
+
+  // sta in ascolto di isHeroUp per transition margin-top
+  HeroSub: Subscription
+  isHeroUp: boolean; 
   
 
   // aumentare opacity in base allo scroll del documento
@@ -72,6 +77,10 @@ slideSub: Subscription
 
 ngOnInit(): void {
  this.slideSub = interval(5000).subscribe(value => this.getNextSlide())
+ this.HeroSub = this.stateSrv.isHeroUp.subscribe((value) =>{
+  this.isHeroUp = value
+  // console.log('carousel', this.isHeroUp) 
+ })
   }
 
 ngOnDestroy(): void {

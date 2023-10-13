@@ -4,12 +4,12 @@
 <!--EFFETTO SIPARIO-->
   <div *ngIf= "isRouteActive('home')" class="hero-container" [ngClass]="{
     'hero-container-over' : scrolling === true}">
-    <div class="hero-vh">
+    <div [ngClass]="{
+      'hero-container-up': isHeroUp === true, 'hero-container-down': isHeroUp === false }">
       <div class="hero-logo">
 
 
-        <div  class="bg-dark d-flex flex-column align-items-center w-100 justify-content-center"  [ngClass]="{
-          'hero-container-up': isHeroUp === true, 'hero-container-down': isHeroUp === false }">
+        <div  class="bg-dark d-flex flex-column align-items-center h-100 w-100 justify-content-center"  >
             <h1 class="text-white-50 fs-1 font-header text-center"> La casa di <br> Montalbano </h1>
         </div>
         <p [ngStyle]="{'display' : isHeroUp === true && 'none' }"  class="text-white-50 fs-6 position-absolute bottom-0 pb-3 font-header text-center start-0 end-0"> Via A. Cammilleri, 93  - Vigata (RG) </p>

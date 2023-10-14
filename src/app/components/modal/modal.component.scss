@@ -1,0 +1,10 @@
+@use '../../../assets/scss/variables' as *; 
+
+.show {
+    display: block;
+
+}
+
+.gradient {
+    background-color: rgba($black, 25%);
+}

@@ -120,5 +120,6 @@
     </form>
 </section>
 
-<!-- passo i dati della form al componente test e lo visualizzo soltanto se è stato cliccato il button 'invia' -->
-<app-test *ngIf="isSubmitted" [payload]="payload"></app-test>
+<!-- passo i dati della form al componente modal e lo visualizzo soltanto se è stato cliccato il button 'invia' -->
+
+<app-modal *ngIf="isSubmitted" [payload]="payload"></app-modal>

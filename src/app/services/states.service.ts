@@ -25,4 +25,11 @@ export class StatesService {
     this.isHeroUpSubject.next(value)
   }
 
+  isSubmittedSubject: BehaviorSubject<boolean> = new BehaviorSubject(false);
+  isSubmitted = this.isSubmittedSubject.asObservable();
+
+    setIsSubmitted = (value: boolean) => {
+    this.isSubmittedSubject.next(value)
+  }
+
 }

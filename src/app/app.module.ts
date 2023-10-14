@@ -18,6 +18,7 @@ import { ContactComponent } from './pages/contact/contact.component';
 import { FormComponent } from './components/form/form.component';
 import { CardComponent } from './components/card/card.component';
 import { ModalComponent } from './components/modal/modal.component';
+import { DoveSiamoComponent } from './pages/dove-siamo/dove-siamo.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { ModalComponent } from './components/modal/modal.component';
     ContactComponent,
     FormComponent,
     CardComponent,
-    ModalComponent
+    ModalComponent,
+    DoveSiamoComponent
   ],
   imports: [
     BrowserModule,

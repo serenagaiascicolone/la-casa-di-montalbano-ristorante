@@ -33,7 +33,8 @@ this.router.navigate(['/contatti'])
 this.setActive('contatti')
 }
 
-goToStoreLocator() {
+goDoveSiamo() {
+  this.router.navigate(['/dove-siamo'])
   this.setActive('map')
 }
 

@@ -7,7 +7,7 @@
             <h3 class= 'text-light text-center font-title fs-4'id="contatti"> LA CASA DI MONTALBANO </h3>
             <address class= 'text-light text-center'> Via A. Camilleri, 93 - Vigata (RG) </address>
             <div class="d-flex flex-column g-2 w-100 gap-2 align-items-center">      
-                <button class="btn btn-warning w-50 d-flex justify-content-center gap-2" [class.active]="isActive('map')" (click)="goToStoreLocator()"> <i class="bi bi-geo-alt"></i> DOVE SIAMO </button>
+                <button class="btn btn-warning w-50 d-flex justify-content-center gap-2" [class.active]="isActive('map')" (click)="goDoveSiamo()"> <i class="bi bi-geo-alt"></i> DOVE SIAMO </button>
                 <button class="btn btn-warning w-50 d-flex justify-content-center gap-2"(click)="goToContatti()"
                 [class.active]="isActive('contatti')"
                 > <i class="bi bi-person-lines-fill"></i> CONTATTACI </button>

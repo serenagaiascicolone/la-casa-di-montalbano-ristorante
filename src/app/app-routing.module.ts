@@ -7,6 +7,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { ContactComponent } from './pages/contact/contact.component';
+import { DoveSiamoComponent } from './pages/dove-siamo/dove-siamo.component';
 
 const routes: Routes = [
   {
@@ -29,6 +30,10 @@ const routes: Routes = [
   {
     path: 'contatti',
     component: ContactComponent,
+  },
+  {
+    path: 'dove-siamo',
+    component: DoveSiamoComponent,
   },
   {
     path: 'not-found',

@@ -30,10 +30,18 @@
               <a class="item from-center fs-5" routerLink = '/menu-ristorante'  routerLinkActive="active" [routerLinkActiveOptions] = 'linkActiveOptions' fragment="contatti" fragment="contatti" > Contatti</a> 
               <a class="item from-center fs-5" routerLink = '/menu-ristorante'  routerLinkActive="active" [routerLinkActiveOptions] = 'linkActiveOptions' fragment="contatti" fragment="prenota" > Prenota</a>  
             </ng-container>
-
+            
+            <!-- MENU-CONTATTI -->
             <ng-container *ngIf="isRouteActive('/contatti')">
               <a class="item from-center fs-5" routerLink = '/contatti'  routerLinkActive="active" [routerLinkActiveOptions] = 'linkActiveOptions' fragment="contatti" fragment="contatti" > Contatti</a> 
               <a class="item from-center fs-5" routerLink = '/contatti'  routerLinkActive="active" [routerLinkActiveOptions] = 'linkActiveOptions' fragment="contatti" fragment="prenota" > Prenota</a>  
+            </ng-container>
+            
+            
+            <!-- MENU-DOVE-SIAMO -->
+            <ng-container *ngIf="isRouteActive('/dove-siamo')">
+              <a class="item from-center fs-5" routerLink = '/dove-siamo'  routerLinkActive="active" [routerLinkActiveOptions] = 'linkActiveOptions' fragment="contatti" fragment="contatti" > Contatti</a> 
+              <a class="item from-center fs-5" routerLink = '/dove-siamo'  routerLinkActive="active" [routerLinkActiveOptions] = 'linkActiveOptions' fragment="contatti" fragment="prenota" > Prenota</a>  
             </ng-container>
           
           </div>

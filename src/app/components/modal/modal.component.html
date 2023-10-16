@@ -6,7 +6,7 @@
     <div class=" modal-dialog h-100 d-flex align-items-center w-100">
       <div class="modal-content mx-4">
         <div class="modal-header text-center">
-          <h5 class="modal-title w-100" id="staticBackdropLabel"><i class="bi bi-send-check text-warning fs-2"></i></h5>
+          <h5 class="modal-title w-100 p-3" id="staticBackdropLabel"><i class="bi bi-send-check text-warning fs-2"></i></h5>
           <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="closeModal()"></button> -->
         </div>
         <div class="modal-body d-flex flex-column text-center justify-content-center p-3 gap-1">
@@ -16,7 +16,7 @@
                 <p class="fs-5">Ti contatteremo al tuo numero di telefono <span class="fw-bold text-danger">{{payload.user.telephone}}</span>
                 o alla tua email <span class="fw-bold text-danger">{{payload.user.email}}.</span> </p>   
                 <p class="fs-5">A presto.</p> 
-            <!-- </div> -->
+          
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-dark text-warning" data-bs-dismiss="modal" (click)="closeModal()">Chiudi</button>
